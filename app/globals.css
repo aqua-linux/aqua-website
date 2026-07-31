@@ -7,10 +7,10 @@
   --aqua: #37bcff;
   --aqua-bright: #87e8ff;
   --blue: #287eff;
-  --glass: rgba(5, 42, 72, 0.28);
-  --glass-strong: rgba(2, 19, 38, 0.5);
-  --line: rgba(147, 215, 255, 0.24);
-  --shadow: rgba(0, 8, 21, 0.42);
+  --glass: rgba(5, 42, 72, 0.2);
+  --glass-strong: rgba(2, 19, 38, 0.42);
+  --line: rgba(151, 221, 255, 0.26);
+  --shadow: rgba(0, 8, 21, 0.38);
 }
 
 @theme inline {
@@ -65,14 +65,14 @@ a {
 .footer {
   border: 1px solid var(--line);
   background:
-    linear-gradient(180deg, rgba(82, 170, 222, 0.12), rgba(5, 39, 68, 0.3) 42%, rgba(1, 18, 37, 0.54)),
-    linear-gradient(90deg, rgba(158, 224, 255, 0.07), rgba(15, 83, 132, 0.04) 46%, rgba(176, 233, 255, 0.06));
+    linear-gradient(180deg, rgba(82, 170, 222, 0.08), rgba(5, 39, 68, 0.22) 42%, rgba(1, 18, 37, 0.45)),
+    linear-gradient(90deg, rgba(158, 224, 255, 0.045), rgba(15, 83, 132, 0.025) 46%, rgba(176, 233, 255, 0.04));
   box-shadow:
-    inset 0 1px 0 rgba(224, 251, 255, 0.26),
-    inset 0 -1px 0 rgba(0, 8, 28, 0.42),
+    inset 0 1px 0 rgba(224, 251, 255, 0.24),
+    inset 0 -1px 0 rgba(0, 8, 28, 0.34),
     0 24px 70px var(--shadow);
-  backdrop-filter: blur(18px) saturate(150%) brightness(1.02);
-  -webkit-backdrop-filter: blur(18px) saturate(150%) brightness(1.02);
+  backdrop-filter: blur(22px) saturate(155%) brightness(1.03);
+  -webkit-backdrop-filter: blur(22px) saturate(155%) brightness(1.03);
 }
 
 .topbar {
@@ -275,13 +275,13 @@ a {
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  width: min(81vw, 1260px);
+  width: min(78vw, 1180px);
   margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(79, 153, 203, 0.13), rgba(4, 34, 62, 0.3) 48%, rgba(1, 17, 34, 0.58)),
-    linear-gradient(90deg, rgba(164, 227, 255, 0.08), rgba(8, 54, 91, 0.03) 52%, rgba(164, 227, 255, 0.07));
+    linear-gradient(180deg, rgba(79, 153, 203, 0.08), rgba(4, 34, 62, 0.22) 48%, rgba(1, 17, 34, 0.45)),
+    linear-gradient(90deg, rgba(164, 227, 255, 0.05), rgba(8, 54, 91, 0.02) 52%, rgba(164, 227, 255, 0.045));
   box-shadow:
     inset 0 1px 0 rgba(226, 250, 255, 0.28),
     inset 0 0 0 1px rgba(255, 255, 255, 0.035),
@@ -327,11 +327,11 @@ a {
 .highlight {
   position: relative;
   display: grid;
-  grid-template-columns: 58px 1fr;
-  gap: 18px;
+  grid-template-columns: 54px 1fr;
+  gap: 16px;
   align-items: center;
   min-height: 122px;
-  padding: 26px clamp(18px, 2.3vw, 38px);
+  padding: 26px clamp(18px, 2.1vw, 32px);
   border-right: 1px solid rgba(154, 220, 255, 0.16);
 }
 
@@ -387,7 +387,7 @@ a {
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
   margin-top: 26px;
 }
 
@@ -402,9 +402,9 @@ a {
   text-align: left;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(84, 160, 207, 0.16), rgba(5, 40, 70, 0.29) 45%, rgba(1, 18, 37, 0.58)),
-    linear-gradient(120deg, rgba(191, 239, 255, 0.09), transparent 32%, rgba(78, 184, 244, 0.07));
-  border-color: rgba(152, 221, 255, 0.34);
+    linear-gradient(180deg, rgba(84, 160, 207, 0.1), rgba(5, 40, 70, 0.2) 45%, rgba(1, 18, 37, 0.45)),
+    linear-gradient(120deg, rgba(191, 239, 255, 0.055), transparent 32%, rgba(78, 184, 244, 0.045));
+  border-color: rgba(152, 221, 255, 0.3);
   box-shadow:
     inset 0 1px 0 rgba(232, 252, 255, 0.26),
     inset 0 -1px 0 rgba(0, 5, 21, 0.38),
@@ -464,8 +464,8 @@ a {
   border-radius: 8px;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(82, 160, 207, 0.15), rgba(4, 35, 63, 0.29) 46%, rgba(1, 17, 35, 0.58)),
-    linear-gradient(120deg, rgba(191, 239, 255, 0.09), transparent 33%, rgba(78, 184, 244, 0.07));
+    linear-gradient(180deg, rgba(82, 160, 207, 0.1), rgba(4, 35, 63, 0.2) 46%, rgba(1, 17, 35, 0.45)),
+    linear-gradient(120deg, rgba(191, 239, 255, 0.055), transparent 33%, rgba(78, 184, 244, 0.045));
   box-shadow:
     inset 0 1px 0 rgba(232, 252, 255, 0.28),
     inset 0 -1px 0 rgba(0, 5, 21, 0.4),
@@ -560,6 +560,12 @@ a {
   }
 
   .highlight-strip,
+  .feature-section,
+  .download-section {
+    width: min(calc(100% - 88px), 720px);
+  }
+
+  .highlight-strip,
   .feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -594,9 +600,10 @@ a {
   }
 
   .navlinks {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 4px 14px;
+    gap: 8px 18px;
     overflow: visible;
     font-size: 13px;
   }
@@ -628,6 +635,12 @@ a {
   .feature-section,
   .download-section {
     width: calc(100% - 28px);
+  }
+
+  .highlight {
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    padding: 24px 20px;
   }
 
   .highlight-strip,
