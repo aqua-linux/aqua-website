@@ -12,18 +12,18 @@ export default function Home() {
         playsInline
         aria-hidden="true"
       />
-      <header className="minimal-topbar" aria-label="Aqua Linux">
-        <a className="brand" href="#home" aria-label="Aqua Linux home">
-          <img src="/aqua-full-logo-glow.png" alt="Aqua Linux" />
-        </a>
-      </header>
-
       <section className="waitlist-hero" id="home" aria-labelledby="hero-title">
-        <aside className="waitlist-panel glass-card" aria-label="Aqua Linux waitlist">
-          <div className="panel-head">
+        <div className="identity-panel">
+          <a className="brand" href="#home" aria-label="Aqua Linux home">
             <img src="/aqua-full-logo-glow.png" alt="Aqua Linux" />
-          </div>
+          </a>
           <h1 id="hero-title">Aqua Linux</h1>
+          <p>
+            Estetiğimiz şeffaflıktan, sakinlikten ve kimseyi takip etmemekten geliyor.
+          </p>
+        </div>
+
+        <aside className="waitlist-panel glass-card" aria-label="Aqua Linux waitlist">
           <WaitlistForm />
         </aside>
       </section>
