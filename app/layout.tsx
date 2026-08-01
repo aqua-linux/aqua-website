@@ -13,9 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aqua Linux",
+  title: "Aqua Linux - Buildroot Based Independent Distro",
   description:
-    "A clean, transparent and beautiful Linux experience with a liquid-glass desktop direction.",
+    "A Buildroot based independent Linux distribution in progress, built toward a custom Wayland compositor and liquid-glass desktop.",
+  openGraph: {
+    title: "Aqua Linux",
+    description:
+      "Independent Buildroot based Linux distribution work in progress.",
+    images: ["/aqua-full-logo-glow.png"],
+  },
   icons: {
     icon: "/aqua-mark-glass.png",
     shortcut: "/aqua-mark-glass.png",

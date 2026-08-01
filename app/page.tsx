@@ -1,61 +1,87 @@
 import {
   ArrowRight,
-  Box,
+  Blocks,
+  BookOpen,
+  Cpu,
   Download,
-  Feather,
+  Eye,
   GitFork,
-  LockKeyhole,
+  HardDrive,
   Monitor,
-  Rocket,
+  PanelTop,
   ShieldCheck,
   Sparkles,
-  Terminal,
+  TerminalSquare,
   UsersRound,
 } from "lucide-react";
+import { WaitlistForm } from "./waitlist-form";
 
-const highlights = [
+const distroSignals = [
   {
-    icon: Rocket,
-    title: "Fast",
-    body: "Optimized for quick boot, smooth motion, and responsive desktop work.",
+    icon: Blocks,
+    title: "Independent base",
+    body: "Aqua Linux is built on Buildroot with its own rootfs, init path, boot checks, and recovery environment.",
+  },
+  {
+    icon: Monitor,
+    title: "Aqua Shell direction",
+    body: "The desktop target is a custom Wayland compositor with a Frutiger Aero and liquid-glass visual system.",
   },
   {
     icon: ShieldCheck,
-    title: "Secure",
-    body: "Built with a minimal base, clear recovery paths, and privacy in mind.",
-  },
-  {
-    icon: Feather,
-    title: "Lightweight",
-    body: "A lean Buildroot foundation focused on efficiency and clarity.",
+    title: "Small, inspectable core",
+    body: "The early system favors clear boot markers, predictable images, and a recovery shell before graphics start.",
   },
   {
     icon: UsersRound,
-    title: "Community",
-    body: "Designed for developers, makers, and transparent open collaboration.",
+    title: "Open development",
+    body: "The project is shaped in public milestones, docs, contracts, scripts, and reproducible QEMU validation.",
   },
 ];
 
-const featureCards = [
+const editions = [
   {
-    icon: Monitor,
-    title: "Aqua Desktop",
-    body: "A calm liquid-glass desktop language shaped around depth, light, and focus.",
+    label: "Current",
+    title: "Milestone image",
+    body: "Bootable QEMU x86_64 image with Buildroot, serial markers, text recovery, and packaged Aqua runtime assets.",
+    meta: "For developers",
   },
   {
-    icon: Terminal,
-    title: "Aqua Terminal",
-    body: "Developer-friendly recovery tools and a fast foundation for system work.",
+    label: "Next",
+    title: "Graphics foundation",
+    body: "DRM/KMS discovery, renderer output, safer graphics probes, and a shell scene moving from plan to pixels.",
+    meta: "In progress",
   },
   {
-    icon: Box,
-    title: "Aqua Software",
-    body: "A future package experience built around simple, deliberate workflows.",
+    label: "Future",
+    title: "Aqua Desktop Preview",
+    body: "A first compositor-hosted desktop preview with wallpaper, dock, launcher, panels, and glass materials.",
+    meta: "Not released",
+  },
+];
+
+const roadmap = [
+  ["Now", "Buildroot image, QEMU boot, rootfs contract, renderer command plan"],
+  ["Next", "DRM/KMS probe, framebuffer safety, first real renderer output"],
+  ["Preview", "Minimal Wayland loop, input path, glass shell surfaces"],
+  ["v1", "Feature freeze, installer/image flow, hardware validation, polished Aqua Shell"],
+];
+
+const projectLinks = [
+  {
+    icon: BookOpen,
+    title: "Documentation",
+    body: "Product plan, milestones, visual references, and liquid-glass notes stay close to the code.",
   },
   {
-    icon: LockKeyhole,
-    title: "Privacy First",
-    body: "Your system stays understandable, inspectable, and under your control.",
+    icon: TerminalSquare,
+    title: "Recovery first",
+    body: "The terminal exists as a recovery and developer tool, not as the final product experience.",
+  },
+  {
+    icon: Cpu,
+    title: "QEMU target",
+    body: "The first development target is x86_64 QEMU. MSI Sword 17 hardware checks come later.",
   },
 ];
 
@@ -71,128 +97,181 @@ export default function Home() {
           </span>
         </a>
         <div className="navlinks">
-          <a href="#home">Home</a>
-          <a href="#features">Features</a>
-          <a href="#download">Download</a>
-          <a href="#community">Community</a>
-          <a href="#news">News</a>
-          <a href="#support">Support</a>
+          <a href="#platform">Platform</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#download">Builds</a>
+          <a href="#waitlist">Waitlist</a>
         </div>
-        <a className="download-pill" href="#download">
-          <Download aria-hidden="true" size={18} />
-          Download Aqua
+        <a className="download-pill" href="#waitlist">
+          <Sparkles aria-hidden="true" size={18} />
+          Join waitlist
         </a>
       </nav>
 
       <section className="hero" id="home" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">Pure. Modern. Transparent.</p>
-          <h1 id="hero-title">
-            Aqua <span>Linux</span>
-          </h1>
+          <p className="eyebrow">Buildroot based independent Linux distro</p>
+          <h1 id="hero-title">Aqua Linux</h1>
           <p className="lead">
-            A clean, transparent and beautiful Linux experience designed to be
-            fast, lightweight, and visually stunning.
+            A clean Linux distribution in progress, built toward a custom
+            Wayland compositor and a skeuomorphic liquid-glass desktop.
           </p>
           <div className="actions">
-            <a className="primary-action" href="#download">
-              <Download aria-hidden="true" size={19} />
-              Download Now
+            <a className="primary-action" href="#waitlist">
+              Join the waitlist
+              <ArrowRight aria-hidden="true" size={19} />
             </a>
-            <a className="secondary-action" href="#features">
-              Explore Features
-              <ArrowRight aria-hidden="true" size={18} />
+            <a className="secondary-action" href="#download">
+              View current build state
+              <Download aria-hidden="true" size={18} />
             </a>
           </div>
-          <p className="trust">
-            <ShieldCheck aria-hidden="true" size={18} />
-            Secure - Stable - Open Source
-          </p>
+          <div className="truth-strip" aria-label="Project boundaries">
+            <span>Not Ubuntu based</span>
+            <span>Not a theme pack</span>
+            <span>QEMU x86_64 first</span>
+          </div>
         </div>
 
-        <div className="hero-mark" aria-hidden="true">
-          <img src="/aqua-symbol-primary.png" alt="" />
+        <div className="hero-console glass-card" aria-label="Current system status">
+          <div className="desktop-preview">
+            <img src="/reference-desktop.png" alt="Aqua Linux desktop visual reference" />
+          </div>
+          <div className="status-grid">
+            <div>
+              <span>base</span>
+              <strong>Buildroot</strong>
+            </div>
+            <div>
+              <span>graphics</span>
+              <strong>Plan only</strong>
+            </div>
+            <div>
+              <span>boot</span>
+              <strong>QEMU ready</strong>
+            </div>
+            <div>
+              <span>shell</span>
+              <strong>Recovery text</strong>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="highlight-strip" aria-label="Aqua Linux highlights">
-        {highlights.map((item) => {
+      <section className="signal-strip" id="platform" aria-label="Aqua platform pillars">
+        {distroSignals.map((item) => {
           const Icon = item.icon;
           return (
-            <article className="highlight" key={item.title}>
-              <Icon aria-hidden="true" size={48} strokeWidth={1.8} />
-              <div>
-                <h2>{item.title}</h2>
-                <p>{item.body}</p>
-              </div>
+            <article className="signal glass-card" key={item.title}>
+              <Icon aria-hidden="true" size={30} strokeWidth={1.8} />
+              <h2>{item.title}</h2>
+              <p>{item.body}</p>
             </article>
           );
         })}
       </section>
 
-      <section className="feature-section" id="features">
-        <p className="section-kicker">Designed for everyone</p>
-        <h2>
-          Beautiful by design. <span>Powerful by nature.</span>
-        </h2>
-        <p className="section-copy">
-          Aqua Linux combines elegance with performance to bring you an
-          operating system that feels simple, open, and ready to shape.
-        </p>
-        <div className="feature-grid">
-          {featureCards.map((item) => {
-            const Icon = item.icon;
-            return (
-              <article className="feature-card" key={item.title}>
-                <div className="icon-well">
-                  <Icon aria-hidden="true" size={31} strokeWidth={1.9} />
-                </div>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.body}</p>
-                  <a href="#download">
-                    Learn more
-                    <ArrowRight aria-hidden="true" size={15} />
-                  </a>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="download-section" id="download">
-        <div>
-          <p className="section-kicker">Milestone builds</p>
-          <h2>Buildroot core today. Liquid-glass desktop next.</h2>
+      <section className="split-section">
+        <div className="section-copy-block">
+          <p className="section-kicker">Open source operating system work</p>
+          <h2>Closer to Debian&apos;s independence than a desktop remix.</h2>
           <p>
-            The project is currently focused on the bootable recovery image,
-            QEMU checks, and the foundation for the Aqua visual system.
+            Aqua is not trying to dress another distribution with a theme. The
+            early work is the operating system foundation: image builds, boot
+            contracts, runtime assets, renderer planning, and later the Aqua
+            compositor itself.
           </p>
         </div>
-        <a className="primary-action" href="https://github.com/" rel="noreferrer">
-          <GitFork aria-hidden="true" size={19} />
-          View Project
-        </a>
+        <div className="principle-list glass-card">
+          <div>
+            <HardDrive aria-hidden="true" size={22} />
+            <span>Own root filesystem and image flow</span>
+          </div>
+          <div>
+            <PanelTop aria-hidden="true" size={22} />
+            <span>Custom shell and visual system direction</span>
+          </div>
+          <div>
+            <Eye aria-hidden="true" size={22} />
+            <span>Readable boot status before polish</span>
+          </div>
+        </div>
       </section>
 
-      <footer className="footer" id="community">
-        <div className="socials" aria-label="Community links">
-          <a href="https://github.com/" aria-label="GitHub">
-            <GitFork aria-hidden="true" size={20} />
-          </a>
-          <a href="#support" aria-label="Support">
-            <Sparkles aria-hidden="true" size={20} />
-          </a>
-          <a href="#news" aria-label="News">
-            <UsersRound aria-hidden="true" size={20} />
-          </a>
+      <section className="edition-section" id="download">
+        <div className="section-heading">
+          <p className="section-kicker">Builds</p>
+          <h2>Downloads will follow the engineering milestones.</h2>
+          <p>
+            The website mirrors the project status clearly: current builds are
+            for validation, not a polished desktop release.
+          </p>
         </div>
-        <p>© 2026 Aqua Linux Project. All rights reserved.</p>
-        <div className="footer-links" id="support">
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms of Use</a>
-          <a href="#contact">Contact</a>
+        <div className="edition-grid">
+          {editions.map((edition) => (
+            <article className="edition-card glass-card" key={edition.title}>
+              <span>{edition.label}</span>
+              <h3>{edition.title}</h3>
+              <p>{edition.body}</p>
+              <small>{edition.meta}</small>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="roadmap-section" id="roadmap">
+        <div className="section-heading">
+          <p className="section-kicker">Roadmap</p>
+          <h2>Simple public stages, no fake release button.</h2>
+        </div>
+        <div className="roadmap glass-card">
+          {roadmap.map(([phase, body]) => (
+            <div className="roadmap-row" key={phase}>
+              <strong>{phase}</strong>
+              <p>{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="waitlist-section" id="waitlist">
+        <div className="waitlist-copy">
+          <p className="section-kicker">Waitlist</p>
+          <h2>Follow the first real Aqua desktop builds.</h2>
+          <p>
+            Join for milestone notes, preview availability, and hardware
+            validation updates. No launch spam, no account requirement.
+          </p>
+        </div>
+        <WaitlistForm />
+      </section>
+
+      <section className="project-section">
+        {projectLinks.map((item) => {
+          const Icon = item.icon;
+          return (
+            <article className="project-card" key={item.title}>
+              <Icon aria-hidden="true" size={24} />
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          );
+        })}
+      </section>
+
+      <footer className="footer">
+        <a className="footer-brand" href="#home">
+          <img src="/aqua-wordmark-glass.png" alt="Aqua Linux" />
+        </a>
+        <p>Open source Linux distribution work in progress.</p>
+        <div className="footer-links">
+          <a href="#platform">Platform</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#waitlist">Waitlist</a>
+          <a href="https://github.com/" rel="noreferrer">
+            <GitFork aria-hidden="true" size={18} />
+            Source
+          </a>
         </div>
       </footer>
     </main>
