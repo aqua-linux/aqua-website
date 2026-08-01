@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-test("defines the Aqua Linux distro page content", async () => {
+test("defines the Aqua Linux waitlist page content", async () => {
   const [page, layout, css] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
@@ -10,11 +10,12 @@ test("defines the Aqua Linux distro page content", async () => {
   ]);
 
   assert.match(layout, /Aqua Linux - Buildroot Based Independent Distro/);
-  assert.match(page, /Buildroot based independent Linux distro/);
-  assert.match(page, /Not Ubuntu based/);
+  assert.match(page, /Buildroot based Linux in progress/);
+  assert.match(page, /Join the Aqua waitlist/);
+  assert.match(page, /first boot, splash, compositor, and/);
   assert.match(page, /Not a theme pack/);
-  assert.match(page, /Join the waitlist/);
-  assert.match(page, /Aqua Shell direction/);
+  assert.match(page, /waitlist-panel glass-card/);
+  assert.doesNotMatch(page, /Roadmap|Downloads will follow|Simple public stages|Platform/);
   assert.match(css, /\.glass-card/);
   assert.match(css, /backdrop-filter:\s*blur/);
   assert.doesNotMatch(page + layout, /Your site is taking shape|Building your site|codex-preview/i);
