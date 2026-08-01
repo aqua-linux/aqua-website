@@ -91,8 +91,8 @@ export default function Home() {
       <nav className="topbar" aria-label="Primary navigation">
         <a className="brand" href="#home" aria-label="Aqua Linux home">
           <img src="/aqua-mark-glass.png" alt="" />
-          <span>
-            <strong>Aqua</strong>
+          <span className="brand-wordmark">
+            <img src="/aqua-wordmark-glass.png" alt="Aqua" />
             <small>Linux</small>
           </span>
         </a>
@@ -266,8 +266,8 @@ export default function Home() {
       <footer className="footer">
         <a className="footer-brand brand-lockup" href="#home" aria-label="Aqua Linux home">
           <img src="/aqua-mark-glass.png" alt="" />
-          <span>
-            <strong>Aqua Linux</strong>
+          <span className="footer-wordmark">
+            <img src="/aqua-wordmark-glass.png" alt="Aqua" />
             <small>Independent OS project</small>
           </span>
         </a>
