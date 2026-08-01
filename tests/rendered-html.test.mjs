@@ -10,13 +10,12 @@ test("defines the Aqua Linux waitlist page content", async () => {
   ]);
 
   assert.match(layout, /Aqua Linux - Buildroot Based Independent Distro/);
-  assert.match(page, /Buildroot based Linux in progress/);
-  assert.match(page, /Join the Aqua waitlist/);
-  assert.match(page, /first boot, splash, compositor, and/);
-  assert.match(page, /Not a theme pack/);
+  assert.match(page, /aqua-background\.mp4/);
   assert.match(page, /waitlist-panel glass-card/);
-  assert.doesNotMatch(page, /Roadmap|Downloads will follow|Simple public stages|Platform/);
+  assert.match(page, /aqua-full-logo-glow\.png/);
+  assert.doesNotMatch(page, /Roadmap|Downloads will follow|Simple public stages|Platform|Not a theme pack|Buildroot based/);
   assert.match(css, /\.glass-card/);
+  assert.match(css, /\.background-video/);
   assert.match(css, /backdrop-filter:\s*blur/);
   assert.doesNotMatch(page + layout, /Your site is taking shape|Building your site|codex-preview/i);
 });

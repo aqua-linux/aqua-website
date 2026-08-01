@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Mail, Send } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 type SubmissionState = "idle" | "submitting" | "success" | "error";
 
@@ -17,7 +17,7 @@ export function WaitlistForm() {
     const form = event.currentTarget;
     const data = new FormData(form);
     const email = String(data.get("email") ?? "").trim();
-    const interest = String(data.get("interest") ?? "").trim();
+    const interest = "waitlist";
 
     try {
       const response = await fetch("/api/waitlist", {
@@ -33,7 +33,7 @@ export function WaitlistForm() {
 
       form.reset();
       setState("success");
-      setMessage("You are on the Aqua Linux waitlist.");
+      setMessage("Joined.");
     } catch (error) {
       setState("error");
       setMessage(error instanceof Error ? error.message : "Could not join the waitlist.");
@@ -41,35 +41,25 @@ export function WaitlistForm() {
   }
 
   return (
-    <form className="waitlist-form glass-card" onSubmit={submit}>
-      <label htmlFor="email">Email address</label>
+    <form className="waitlist-form" onSubmit={submit}>
       <div className="input-row">
         <Mail aria-hidden="true" size={20} />
         <input
           id="email"
           name="email"
           type="email"
-          placeholder="you@example.com"
+          aria-label="Email address"
+          placeholder="Email address"
           required
           autoComplete="email"
         />
+        <button type="submit" disabled={state === "submitting"} aria-label="Join waitlist">
+          <ArrowRight aria-hidden="true" size={20} />
+        </button>
       </div>
 
-      <label htmlFor="interest">What should we send you?</label>
-      <select id="interest" name="interest" defaultValue="desktop-preview">
-        <option value="desktop-preview">Desktop preview updates</option>
-        <option value="builds">Milestone build notes</option>
-        <option value="hardware">Hardware validation notes</option>
-        <option value="contributor">Contributor updates</option>
-      </select>
-
-      <button type="submit" disabled={state === "submitting"}>
-        <Send aria-hidden="true" size={18} />
-        {state === "submitting" ? "Joining..." : "Join waitlist"}
-      </button>
-
       <p className={`form-message ${state === "error" ? "is-error" : ""}`} role="status">
-        {message || "Stored for Aqua Linux milestone communication only."}
+        {state === "submitting" ? "Joining..." : message}
       </p>
     </form>
   );
