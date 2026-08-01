@@ -134,6 +134,10 @@ export default function Home() {
         </div>
 
         <div className="hero-console glass-card" aria-label="Current system status">
+          <div className="preview-header">
+            <span>Live foundation preview</span>
+            <strong>Milestone 1+</strong>
+          </div>
           <div className="desktop-preview">
             <img src="/reference-desktop.png" alt="Aqua Linux desktop visual reference" />
           </div>
@@ -260,8 +264,12 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-        <a className="footer-brand" href="#home">
-          <img src="/aqua-wordmark-glass.png" alt="Aqua Linux" />
+        <a className="footer-brand brand-lockup" href="#home" aria-label="Aqua Linux home">
+          <img src="/aqua-mark-glass.png" alt="" />
+          <span>
+            <strong>Aqua Linux</strong>
+            <small>Independent OS project</small>
+          </span>
         </a>
         <p>Open source Linux distribution work in progress.</p>
         <div className="footer-links">
