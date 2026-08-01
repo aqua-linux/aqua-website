@@ -5,7 +5,7 @@ export default function Home() {
     <main className="waitlist-shell">
       <video
         className="background-video"
-        src="/aqua-background.mp4"
+        src="/aqua-live-wallpaper.mp4"
         autoPlay
         muted
         loop
@@ -13,10 +13,7 @@ export default function Home() {
         aria-hidden="true"
       />
       <section className="waitlist-hero" id="home" aria-labelledby="hero-title">
-        <div className="identity-panel">
-          <a className="brand" href="#home" aria-label="Aqua Linux home">
-            <img src="/aqua-full-logo-glow.png" alt="Aqua Linux" />
-          </a>
+        <div className="identity-panel glass-card">
           <h1 id="hero-title">Aqua Linux</h1>
           <p>
             Estetiğimiz şeffaflıktan, sakinlikten ve kimseyi takip etmemekten geliyor.

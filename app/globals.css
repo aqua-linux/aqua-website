@@ -56,7 +56,8 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(1.14) contrast(1.05) brightness(0.72);
+  object-position: center center;
+  filter: saturate(1.08) contrast(1.04) brightness(0.94);
 }
 
 .waitlist-shell::before {
@@ -66,8 +67,9 @@ a {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 50% 40%, rgba(104, 233, 247, 0.08), transparent 38%),
-    linear-gradient(180deg, rgba(1, 10, 18, 0.36), rgba(1, 10, 18, 0.68));
+    radial-gradient(ellipse at 50% 47%, transparent 0 20%, rgba(1, 16, 31, 0.08) 38%, rgba(1, 16, 31, 0.32) 100%),
+    linear-gradient(90deg, rgba(1, 13, 28, 0.5), rgba(1, 13, 28, 0.04) 36%, rgba(1, 13, 28, 0.04) 60%, rgba(1, 13, 28, 0.46)),
+    linear-gradient(180deg, rgba(1, 10, 18, 0.04), rgba(1, 10, 18, 0.38));
 }
 
 .waitlist-shell::after {
@@ -85,34 +87,23 @@ a {
   opacity: 0.34;
 }
 
-.brand {
-  display: inline-grid;
-  place-items: center;
-  width: fit-content;
-}
-
-.brand img {
-  width: min(330px, 58vw);
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 18px 42px rgba(0, 10, 24, 0.42));
-}
-
 .waitlist-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
-  align-items: center;
-  gap: clamp(28px, 7vw, 110px);
+  grid-template-columns: minmax(270px, 390px) minmax(280px, 380px);
+  align-items: end;
+  justify-content: space-between;
+  gap: clamp(180px, 24vw, 380px);
   min-height: 100vh;
-  width: min(1120px, calc(100% - 44px));
+  width: min(1280px, calc(100% - 56px));
   margin: 0 auto;
-  padding: 64px 0;
+  padding: 0 0 clamp(48px, 8vh, 86px);
 }
 
 .identity-panel {
   display: grid;
-  gap: 22px;
+  gap: 0;
   align-content: center;
+  padding: 22px 24px 24px;
 }
 
 .identity-panel h1 {
@@ -124,13 +115,13 @@ a {
 }
 
 .identity-panel p {
-  max-width: 560px;
+  max-width: 340px;
   margin: 0;
-  color: rgba(246, 251, 255, 0.9);
-  font-size: clamp(23px, 3vw, 38px);
-  font-weight: 650;
-  line-height: 1.22;
-  text-shadow: 0 18px 46px rgba(0, 9, 24, 0.58);
+  color: rgba(248, 253, 255, 0.96);
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 720;
+  line-height: 1.18;
+  text-shadow: 0 2px 18px rgba(0, 6, 16, 0.86);
 }
 
 .glass-card {
@@ -140,16 +131,16 @@ a {
   border: 1px solid rgba(137, 220, 248, 0.46);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(213, 249, 255, 0.13), rgba(42, 145, 190, 0.13) 18%, rgba(2, 60, 95, 0.5) 48%, rgba(1, 23, 50, 0.68)),
-    linear-gradient(115deg, rgba(62, 179, 226, 0.2), rgba(3, 68, 106, 0.22) 44%, rgba(0, 17, 42, 0.34)),
-    rgba(2, 54, 86, 0.72);
+    linear-gradient(180deg, rgba(227, 252, 255, 0.2), rgba(44, 151, 198, 0.18) 22%, rgba(2, 53, 86, 0.62) 52%, rgba(0, 18, 42, 0.76)),
+    linear-gradient(115deg, rgba(74, 194, 236, 0.24), rgba(3, 68, 106, 0.3) 44%, rgba(0, 14, 38, 0.44)),
+    rgba(2, 42, 70, 0.78);
   box-shadow:
-    inset 0 1px 0 rgba(224, 252, 255, 0.5),
+    inset 0 1px 0 rgba(238, 253, 255, 0.58),
     inset 0 0 0 1px rgba(195, 244, 255, 0.08),
     inset 0 -1px 0 rgba(0, 12, 29, 0.62),
-    0 30px 90px rgba(0, 8, 20, 0.48);
-  backdrop-filter: blur(48px) saturate(1.58) contrast(1.08);
-  -webkit-backdrop-filter: blur(48px) saturate(1.58) contrast(1.08);
+    0 24px 80px rgba(0, 8, 20, 0.58);
+  backdrop-filter: blur(36px) saturate(1.48) contrast(1.12);
+  -webkit-backdrop-filter: blur(36px) saturate(1.48) contrast(1.12);
 }
 
 .glass-card::before {
@@ -188,7 +179,7 @@ a {
 }
 
 .waitlist-panel {
-  padding: 12px;
+  padding: 14px;
 }
 
 .waitlist-form {
@@ -199,19 +190,19 @@ a {
 
 .input-row {
   display: grid;
-  grid-template-columns: 38px 1fr 46px;
+  grid-template-columns: 40px 1fr 50px;
   align-items: center;
-  min-height: 58px;
-  padding: 5px 6px 5px 16px;
-  border: 1px solid rgba(170, 239, 255, 0.35);
+  min-height: 62px;
+  padding: 5px 6px 5px 17px;
+  border: 1px solid rgba(207, 250, 255, 0.5);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(16, 101, 137, 0.1)),
-    rgba(0, 22, 42, 0.52);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(13, 89, 130, 0.15)),
+    rgba(0, 17, 36, 0.72);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    inset 0 -1px 0 rgba(0, 12, 29, 0.34),
-    0 16px 42px rgba(0, 8, 20, 0.24);
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 0 rgba(0, 12, 29, 0.42),
+    0 16px 42px rgba(0, 8, 20, 0.34);
 }
 
 .input-row svg {
@@ -225,19 +216,20 @@ a {
   outline: 0;
   background: transparent;
   color: white;
-  font-size: 15px;
-  font-weight: 640;
+  font-size: 16px;
+  font-weight: 690;
+  text-shadow: 0 1px 10px rgba(0, 8, 18, 0.54);
 }
 
 .input-row input::placeholder {
-  color: rgba(232, 250, 255, 0.56);
+  color: rgba(239, 253, 255, 0.74);
 }
 
 .input-row button {
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   border: 0;
   border-radius: 8px;
   color: #03131f;
@@ -267,24 +259,22 @@ a {
 }
 
 @media (max-width: 620px) {
-  .brand img {
-    width: min(270px, 72vw);
-  }
-
   .waitlist-hero {
     grid-template-columns: 1fr;
-    align-content: center;
-    gap: 32px;
+    align-content: end;
+    gap: 18px;
     width: calc(100% - 28px);
-    padding: 36px 0;
+    padding: 0 0 26px;
   }
 
   .identity-panel {
     justify-items: start;
+    padding: 18px 18px 19px;
   }
 
   .identity-panel p {
-    font-size: 24px;
+    max-width: 310px;
+    font-size: 21px;
   }
 
   .input-row {
