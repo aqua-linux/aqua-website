@@ -16,11 +16,17 @@ function readClock() {
       parts.find((part) => part.type === "minute")?.value ?? "00"
     }:${parts.find((part) => part.type === "second")?.value ?? "00"}`,
     period: parts.find((part) => part.type === "dayPeriod")?.value ?? "",
+    date: new Intl.DateTimeFormat("tr-TR", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }).format(now),
   };
 }
 
 export function RealClock() {
-  const [clock, setClock] = useState({ time: "--:--:--", period: "" });
+  const [clock, setClock] = useState({ time: "--:--:--", period: "", date: "" });
 
   useEffect(() => {
     const update = () => setClock(readClock());
@@ -36,11 +42,14 @@ export function RealClock() {
   return (
     <div
       className="clock-overlay"
-      aria-label={`Current time ${clock.time} ${clock.period}`}
+      aria-label={`Current time ${clock.time} ${clock.period}, ${clock.date}`}
       suppressHydrationWarning
     >
-      <span className="clock-time">{clock.time}</span>
-      <span className="clock-period">{clock.period}</span>
+      <div className="clock-row">
+        <span className="clock-time">{clock.time}</span>
+        <span className="clock-period">{clock.period}</span>
+      </div>
+      <span className="clock-date">{clock.date || "..."}</span>
     </div>
   );
 }
