@@ -42,7 +42,6 @@ export function WaitlistForm() {
 
   return (
     <form className="waitlist-form" onSubmit={submit}>
-      <p className="waitlist-title">Bekleme listesine katılın</p>
       <div className="input-row">
         <Mail aria-hidden="true" size={20} />
         <input
@@ -50,7 +49,7 @@ export function WaitlistForm() {
           name="email"
           type="email"
           aria-label="Email address"
-          placeholder="E-posta adresinizi girin"
+          placeholder="Email address"
           required
           autoComplete="email"
         />
@@ -60,9 +59,7 @@ export function WaitlistForm() {
       </div>
 
       <p className={`form-message ${state === "error" ? "is-error" : ""}`} role="status">
-        {state === "submitting"
-          ? "Kaydediliyor..."
-          : message || "Kişisel bilgileriniz güvende. Spam gönderilmez."}
+        {state === "submitting" ? "Joining..." : message}
       </p>
     </form>
   );
