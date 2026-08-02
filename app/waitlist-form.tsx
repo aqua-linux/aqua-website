@@ -50,7 +50,7 @@ export function WaitlistForm() {
           name="email"
           type="email"
           aria-label="Email address"
-          placeholder="email@domain.com"
+          placeholder="E-posta adresinizi girin"
           required
           autoComplete="email"
         />
@@ -60,7 +60,9 @@ export function WaitlistForm() {
       </div>
 
       <p className={`form-message ${state === "error" ? "is-error" : ""}`} role="status">
-        {state === "submitting" ? "Kaydediliyor..." : message}
+        {state === "submitting"
+          ? "Kaydediliyor..."
+          : message || "Kişisel bilgileriniz güvende. Spam gönderilmez."}
       </p>
     </form>
   );
