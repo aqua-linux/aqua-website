@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  --background: #020712;
   --foreground: #f6fbff;
 }
 
@@ -33,105 +33,184 @@ input {
   font: inherit;
 }
 
-.boot-shell {
+.release-shell {
+  position: relative;
   display: grid;
   min-height: 100vh;
   place-items: center;
   overflow: hidden;
-  background: #000;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(42, 164, 231, 0.32), transparent 24%),
+    radial-gradient(ellipse at 50% 48%, rgba(9, 65, 118, 0.44), transparent 42%),
+    radial-gradient(ellipse at 50% 100%, rgba(3, 15, 40, 0.82), transparent 46%),
+    linear-gradient(115deg, #01030b 0%, #061427 35%, #082038 50%, #061427 65%, #01030b 100%);
 }
 
-.boot-center {
+.release-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.34), transparent 24%, transparent 76%, rgba(0, 0, 0, 0.34)),
+    radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(0, 0, 0, 0.54) 100%);
+}
+
+.release-center {
+  position: relative;
+  z-index: 1;
   display: grid;
   justify-items: center;
-  gap: clamp(22px, 4vh, 42px);
-  width: min(760px, calc(100% - 36px));
-}
-
-.boot-logo {
-  display: block;
-  width: min(620px, 86vw);
-  height: auto;
-  object-fit: contain;
-}
-
-.waitlist-panel {
-  width: min(420px, 100%);
-}
-
-.waitlist-form {
-  display: grid;
-  gap: 10px;
-  width: 100%;
-}
-
-.input-row {
-  display: grid;
-  grid-template-columns: 40px 1fr 46px;
-  align-items: center;
-  min-height: 56px;
-  padding: 5px 5px 5px 14px;
-  border: 1px solid rgba(125, 226, 255, 0.42);
-  border-radius: 8px;
-  background: rgba(4, 32, 55, 0.62);
-}
-
-.input-row svg {
-  color: rgba(153, 239, 255, 0.86);
-}
-
-.input-row input {
-  width: 100%;
-  min-width: 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 560;
-}
-
-.input-row input::placeholder {
-  color: rgba(232, 250, 255, 0.62);
-}
-
-.input-row button {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border: 0;
-  border-radius: 8px;
-  color: #02111e;
-  background: linear-gradient(180deg, #f7ffff, #7cefff 48%, #20a1ec);
-  cursor: pointer;
-}
-
-.input-row button:disabled {
-  cursor: wait;
-  opacity: 0.7;
-}
-
-.form-message {
-  min-height: 16px;
-  margin: 0;
-  color: rgba(230, 250, 255, 0.72);
+  align-content: center;
+  width: min(720px, calc(100% - 40px));
+  min-height: 100vh;
+  padding: 6vh 0 7vh;
   text-align: center;
-  font-size: 12px;
-  font-weight: 560;
 }
 
-.form-message.is-error {
-  color: #ffb4bd;
+.release-logo {
+  display: block;
+  width: min(330px, 44vw);
+  height: auto;
+  margin-bottom: clamp(34px, 5.8vh, 58px);
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 18px rgba(46, 204, 255, 0.48))
+    drop-shadow(0 22px 52px rgba(0, 4, 18, 0.72));
 }
 
-@media (max-width: 520px) {
-  .boot-center {
-    width: calc(100% - 28px);
-    gap: 20px;
+.release-center h1 {
+  display: grid;
+  margin: 0;
+  color: rgba(245, 250, 255, 0.96);
+  font-size: clamp(42px, 4.1vw, 58px);
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.16;
+  text-shadow: 0 0 26px rgba(191, 230, 255, 0.2), 0 8px 30px rgba(0, 0, 0, 0.58);
+}
+
+.release-center h1 strong {
+  color: #4de7ff;
+  font-weight: 300;
+  text-shadow: 0 0 30px rgba(50, 223, 255, 0.42), 0 8px 30px rgba(0, 0, 0, 0.62);
+}
+
+.release-copy {
+  margin: clamp(22px, 3vh, 30px) 0 clamp(50px, 7.2vh, 76px);
+  color: rgba(237, 241, 249, 0.76);
+  font-size: clamp(19px, 1.55vw, 25px);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  text-shadow: 0 5px 24px rgba(0, 0, 0, 0.6);
+}
+
+.release-countdown {
+  width: min(610px, 100%);
+}
+
+.countdown-kicker {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.countdown-kicker span {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(50, 210, 255, 0.62), transparent);
+}
+
+.countdown-kicker p,
+.countdown-group p {
+  margin: 0;
+  color: #24eaff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(26, 221, 255, 0.48);
+}
+
+.countdown-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+}
+
+.countdown-group {
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+  min-width: 0;
+}
+
+.countdown-value {
+  display: grid;
+  grid-template-columns: 1fr 38px;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  color: rgba(250, 253, 255, 0.96);
+  font-size: clamp(44px, 4vw, 61px);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-shadow: 0 0 24px rgba(174, 223, 255, 0.26), 0 8px 28px rgba(0, 0, 0, 0.68);
+}
+
+.countdown-value b {
+  color: #24cfff;
+  font: inherit;
+  font-weight: 300;
+  transform: translateY(-0.05em);
+  text-shadow: 0 0 18px rgba(36, 207, 255, 0.55);
+}
+
+.countdown-group:last-child .countdown-value {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 640px) {
+  .release-center {
+    width: min(430px, calc(100% - 32px));
+    padding: 5vh 0 6vh;
   }
 
-  .boot-logo {
-    width: min(520px, 92vw);
+  .release-logo {
+    width: min(270px, 68vw);
+    margin-bottom: 32px;
+  }
+
+  .release-center h1 {
+    font-size: clamp(34px, 11vw, 48px);
+  }
+
+  .release-copy {
+    margin-bottom: 44px;
+    font-size: 17px;
+  }
+
+  .countdown-kicker {
+    gap: 14px;
+  }
+
+  .countdown-kicker p,
+  .countdown-group p {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+  }
+
+  .countdown-value {
+    grid-template-columns: 1fr 18px;
+    font-size: clamp(30px, 10vw, 42px);
+  }
+
+  .countdown-group {
+    gap: 14px;
   }
 }

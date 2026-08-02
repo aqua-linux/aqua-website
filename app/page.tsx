@@ -1,18 +1,28 @@
-import { WaitlistForm } from "./waitlist-form";
+import { ReleaseCountdown } from "./release-countdown";
 
 export default function Home() {
   return (
-    <main className="boot-shell">
-      <section className="boot-center" aria-label="Aqua Linux waitlist">
+    <main className="release-shell">
+      <section className="release-center" aria-label="Aqua Linux first release">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="boot-logo"
-          src="/boot-splash-full-logo.png"
+          className="release-logo"
+          src="/aqua-full-logo-glow.png"
           alt="Aqua Linux"
         />
-        <div className="waitlist-panel" aria-label="Aqua Linux waitlist">
-          <WaitlistForm />
-        </div>
+
+        <h1>
+          <span>Modern Linux,</span>
+          <strong>beautifully reimagined.</strong>
+        </h1>
+
+        <p className="release-copy">
+          Frutiger Aero aesthetics meet
+          <br />
+          modern Linux engineering.
+        </p>
+
+        <ReleaseCountdown />
       </section>
     </main>
   );
