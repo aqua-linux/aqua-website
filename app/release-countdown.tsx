@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-const RELEASE_DATE = new Date("2027-01-01T00:00:00+03:00").getTime();
+const RELEASE_DATE = new Date("2027-09-01T00:00:00+03:00").getTime();
 const SECOND = 1000;
 const MINUTE = 60 * SECOND;
 const HOUR = 60 * MINUTE;

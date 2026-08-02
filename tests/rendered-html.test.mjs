@@ -19,7 +19,7 @@ test("defines the Aqua Linux first release page content", async () => {
   assert.match(page, /modern Linux engineering\./);
   assert.match(page, /ReleaseCountdown/);
   assert.match(countdown, /First release in/);
-  assert.match(countdown, /2027-01-01/);
+  assert.match(countdown, /2027-09-01/);
   assert.doesNotMatch(page, /WaitlistForm|AquariumCard|RealClock/);
   assert.doesNotMatch(page, /aqua-mark-glass\.png|aqua-wordmark-glass\.png/);
   assert.doesNotMatch(page, /Skeuomorphic|Saf\. Şeffaf\. Güvenli|Aqua Linux, sadelik|Email address/);
