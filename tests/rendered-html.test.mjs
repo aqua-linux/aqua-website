@@ -14,11 +14,15 @@ test("defines the Aqua Linux waitlist page content", async () => {
   assert.match(layout, /Aqua Linux - Buildroot Based Independent Distro/);
   assert.match(page, /website-background\.mp4/);
   assert.match(page, /RealClock/);
+  assert.match(page, /aqua-mark-glass\.png/);
+  assert.match(page, /aqua-wordmark-glass\.png/);
+  assert.match(page, /Frutiger Aero ve skeuomorfizm estetiğini Linux gücü ile birleştirdik/);
+  assert.match(page, /Saf\. Şeffaf\. Güvenli\./);
   assert.match(page, /waitlist-panel/);
   assert.match(clock, /clock-date/);
   assert.match(clock, /tr-TR/);
-  assert.match(form, /Takip listesine katılın/);
-  assert.match(form, /Email adresiniz/);
+  assert.match(form, /Bekleme listesine katılın/);
+  assert.match(form, /email@domain\.com/);
   assert.doesNotMatch(page, /Estetiğimiz şeffaflıktan/);
   assert.doesNotMatch(page, /identity-panel|glass-card/);
   assert.doesNotMatch(page, /aqua-full-logo-glow\.png/);

@@ -42,7 +42,7 @@ export function WaitlistForm() {
 
   return (
     <form className="waitlist-form" onSubmit={submit}>
-      <p className="waitlist-title">Takip listesine katılın</p>
+      <p className="waitlist-title">Bekleme listesine katılın</p>
       <div className="input-row">
         <Mail aria-hidden="true" size={20} />
         <input
@@ -50,17 +50,17 @@ export function WaitlistForm() {
           name="email"
           type="email"
           aria-label="Email address"
-          placeholder="Email adresiniz"
+          placeholder="email@domain.com"
           required
           autoComplete="email"
         />
         <button type="submit" disabled={state === "submitting"} aria-label="Join waitlist">
-          <ArrowRight aria-hidden="true" size={20} />
+          <ArrowRight aria-hidden="true" size={18} />
         </button>
       </div>
 
       <p className={`form-message ${state === "error" ? "is-error" : ""}`} role="status">
-        {state === "submitting" ? "Ekleniyor..." : message}
+        {state === "submitting" ? "Kaydediliyor..." : message}
       </p>
     </form>
   );
