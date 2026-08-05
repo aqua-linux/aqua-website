@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ReleaseCountdown } from "./countdown";
 
 const navItems = [
   ["Overview", "/"],
@@ -107,14 +108,15 @@ export function Hero() {
                 <span />
               </div>
               <div className="window-body">
-                <div className="dock">
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                </div>
+                <ReleaseCountdown />
               </div>
+            </div>
+            <div className="desktop-dock">
+              <span className="dock-icon files" />
+              <span className="dock-icon terminal" />
+              <span className="dock-icon browser" />
+              <span className="dock-icon settings" />
+              <span className="dock-icon download" />
             </div>
           </div>
           <div className="stand" />

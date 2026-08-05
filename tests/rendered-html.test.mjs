@@ -3,11 +3,12 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("defines the Aqua Linux product site content", async () => {
-  const [page, layout, css, site, desktop, apps, community, download] = await Promise.all([
+  const [page, layout, css, site, countdown, desktop, apps, community, download] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/site.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/countdown.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/desktop/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/apps/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/community/page.tsx", import.meta.url), "utf8"),
@@ -22,6 +23,10 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(site, /A lightweight Linux project/);
   assert.match(site, /Friendly desktop/);
   assert.match(site, />Download</);
+  assert.match(site, /ReleaseCountdown/);
+  assert.match(site, /desktop-dock/);
+  assert.match(countdown, /First release in/);
+  assert.match(countdown, /2027-09-01/);
   assert.doesNotMatch(site, /href="\/download">Download Aqua|ISO|QEMU|Get Aqua|First preview builds/);
   assert.match(desktop, /Aqua Desktop/);
   assert.match(apps, /Aqua Apps/);
@@ -31,6 +36,8 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /\.appbar-inner/);
   assert.match(css, /\.subpage-hero/);
   assert.match(css, /\.community-panel/);
+  assert.match(css, /\.release-countdown/);
+  assert.match(css, /\.desktop-dock/);
   assert.match(css, /#34363b/);
   assert.match(css, /#17191f/);
   assert.match(site, /"Desktop", "\/desktop"/);
