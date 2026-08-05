@@ -30,8 +30,8 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /\.appbar-inner/);
   assert.match(css, /\.subpage-hero/);
   assert.match(css, /\.community-panel/);
-  assert.match(css, /#59616a/);
-  assert.match(css, /#2d343c/);
+  assert.match(css, /#34363b/);
+  assert.match(css, /#17191f/);
   assert.match(site, /"Desktop", "\/desktop"/);
   assert.match(site, /"Apps", "\/apps"/);
   assert.match(site, /"Community", "\/community"/);
