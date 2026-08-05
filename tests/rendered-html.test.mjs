@@ -42,7 +42,8 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /\.release-countdown/);
   assert.match(css, /\.desktop-dock/);
   assert.match(css, /appbar-top-strip\.png/);
-  assert.match(css, /100% 100% no-repeat/);
+  assert.match(css, /background-repeat: repeat-x/);
+  assert.match(css, /background-size: auto 100%/);
   assert.match(css, /border-top: 1px solid rgba\(255, 255, 255, 0\.26\)/);
   assert.match(site, /"Desktop", "\/desktop"/);
   assert.match(site, /"Apps", "\/apps"/);
