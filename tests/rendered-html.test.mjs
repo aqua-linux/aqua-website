@@ -3,12 +3,13 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("defines the Aqua Linux product site content", async () => {
-  const [page, layout, css, site, nav, countdown, desktop, apps, community, download] = await Promise.all([
+  const [page, layout, css, site, nav, navItems, countdown, desktop, apps, community, download] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/site.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/nav.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/nav-items.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/countdown.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/desktop/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/apps/page.tsx", import.meta.url), "utf8"),
@@ -49,10 +50,10 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /text-shadow: 0 -1px 1px rgba\(0, 0, 0, 0\.75\)/);
   assert.match(nav, /aria-current/);
   assert.match(css, /border-top: 1px solid rgba\(255, 255, 255, 0\.26\)/);
-  assert.match(nav, /"Desktop", "\/desktop"/);
-  assert.match(nav, /"Apps", "\/apps"/);
-  assert.match(nav, /"Community", "\/community"/);
-  assert.match(nav, /"Download", "\/download"/);
+  assert.match(navItems, /"Desktop", "\/desktop"/);
+  assert.match(navItems, /"Apps", "\/apps"/);
+  assert.match(navItems, /"Community", "\/community"/);
+  assert.match(navItems, /"Download", "\/download"/);
   assert.doesNotMatch(page, /WaitlistForm|AquariumCard|RealClock/);
   assert.doesNotMatch(page, /Skeuomorphic|Saf\. Şeffaf\. Güvenli|Aqua Linux, sadelik|Email address/);
   assert.doesNotMatch(page, /Estetiğimiz şeffaflıktan/);

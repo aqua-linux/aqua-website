@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { ReleaseCountdown } from "./countdown";
-import { PrimaryNav, navItems } from "./nav";
+import { navItems } from "./nav-items";
+import { PrimaryNav } from "./nav";
 
 const featureCards = [
   {

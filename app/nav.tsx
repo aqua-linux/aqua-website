@@ -1,14 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-
-const navItems = [
-  ["Overview", "/"],
-  ["Desktop", "/desktop"],
-  ["Apps", "/apps"],
-  ["Community", "/community"],
-  ["Download", "/download"],
-];
+import { navItems } from "./nav-items";
 
 export function PrimaryNav() {
   const pathname = usePathname();
@@ -32,5 +25,3 @@ export function PrimaryNav() {
     </nav>
   );
 }
-
-export { navItems };
