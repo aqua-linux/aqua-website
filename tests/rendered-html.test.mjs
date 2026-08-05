@@ -27,6 +27,9 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(site, /desktop-dock/);
   assert.match(countdown, /First release in/);
   assert.match(countdown, /2027-09-01/);
+  assert.match(countdown, /seconds/);
+  assert.match(countdown, /dk/);
+  assert.match(countdown, /sn/);
   assert.doesNotMatch(site, /href="\/download">Download Aqua|ISO|QEMU|Get Aqua|First preview builds/);
   assert.match(desktop, /Aqua Desktop/);
   assert.match(apps, /Aqua Apps/);
@@ -38,9 +41,10 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /\.community-panel/);
   assert.match(css, /\.release-countdown/);
   assert.match(css, /\.desktop-dock/);
-  assert.match(css, /#2d2d2d/);
+  assert.match(css, /#313131/);
   assert.match(css, /#171717/);
   assert.match(css, /repeating-linear-gradient/);
+  assert.match(css, /repeating-radial-gradient/);
   assert.match(site, /"Desktop", "\/desktop"/);
   assert.match(site, /"Apps", "\/apps"/);
   assert.match(site, /"Community", "\/community"/);

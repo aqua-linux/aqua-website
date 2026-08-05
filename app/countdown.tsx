@@ -9,15 +9,16 @@ function getRemaining() {
   const days = Math.floor(delta / 86_400_000);
   const hours = Math.floor((delta / 3_600_000) % 24);
   const minutes = Math.floor((delta / 60_000) % 60);
+  const seconds = Math.floor((delta / 1_000) % 60);
 
-  return { days, hours, minutes };
+  return { days, hours, minutes, seconds };
 }
 
 export function ReleaseCountdown() {
   const [remaining, setRemaining] = useState(getRemaining);
 
   useEffect(() => {
-    const timer = window.setInterval(() => setRemaining(getRemaining()), 60_000);
+    const timer = window.setInterval(() => setRemaining(getRemaining()), 1_000);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -35,7 +36,11 @@ export function ReleaseCountdown() {
         </span>
         <span>
           <strong>{remaining.minutes.toString().padStart(2, "0")}</strong>
-          <small>min</small>
+          <small>dk</small>
+        </span>
+        <span>
+          <strong>{remaining.seconds.toString().padStart(2, "0")}</strong>
+          <small>sn</small>
         </span>
       </div>
     </div>
