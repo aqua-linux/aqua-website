@@ -19,7 +19,7 @@ export function InteractiveHero() {
 
   return (
     <section className="hero hero-wallpaper" style={heroStyle}>
-      <p className="kicker">Thoughtful, capable, and open computing</p>
+      <p className="kicker">Built on modernity, graced by the elegance of the past.</p>
       <h1>Aqua Linux</h1>
       <p className="hero-copy">
         A lightweight Linux project with a polished Aqua-inspired desktop
