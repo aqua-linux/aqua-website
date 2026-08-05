@@ -42,11 +42,11 @@ export function ReleaseCountdown() {
         </span>
         <span>
           <strong>{remaining.minutes.toString().padStart(2, "0")}</strong>
-          <small>dk</small>
+          <small>minutes</small>
         </span>
         <span>
           <strong>{remaining.seconds.toString().padStart(2, "0")}</strong>
-          <small>sn</small>
+          <small>seconds</small>
         </span>
       </div>
     </div>

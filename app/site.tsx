@@ -1,13 +1,6 @@
 import type { ReactNode } from "react";
 import { ReleaseCountdown } from "./countdown";
-
-const navItems = [
-  ["Overview", "/"],
-  ["Desktop", "/desktop"],
-  ["Apps", "/apps"],
-  ["Community", "/community"],
-  ["Download", "/download"],
-];
+import { PrimaryNav, navItems } from "./nav";
 
 const featureCards = [
   {
@@ -61,13 +54,7 @@ function Header() {
         <a className="brand" href="/" aria-label="Aqua Linux home">
           <img src="/aqua-wordmark-glass.png" alt="Aqua Linux" />
         </a>
-        <nav className="nav-links" aria-label="Primary navigation">
-          {navItems.map(([item, href]) => (
-            <a href={href} key={item}>
-              {item}
-            </a>
-          ))}
-        </nav>
+        <PrimaryNav />
       </div>
     </header>
   );

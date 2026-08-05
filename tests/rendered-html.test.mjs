@@ -3,11 +3,12 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("defines the Aqua Linux product site content", async () => {
-  const [page, layout, css, site, countdown, desktop, apps, community, download] = await Promise.all([
+  const [page, layout, css, site, nav, countdown, desktop, apps, community, download] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/site.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/nav.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/countdown.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/desktop/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/apps/page.tsx", import.meta.url), "utf8"),
@@ -28,8 +29,8 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(countdown, /First release in/);
   assert.match(countdown, /2027-09-01/);
   assert.match(countdown, /seconds/);
-  assert.match(countdown, /dk/);
-  assert.match(countdown, /sn/);
+  assert.match(countdown, /minutes/);
+  assert.doesNotMatch(countdown, /dk|sn/);
   assert.doesNotMatch(site, /href="\/download">Download Aqua|ISO|QEMU|Get Aqua|First preview builds/);
   assert.match(desktop, /Aqua Desktop/);
   assert.match(apps, /Aqua Apps/);
@@ -44,11 +45,14 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /appbar-top-strip\.png/);
   assert.match(css, /background-repeat: repeat-x/);
   assert.match(css, /background-size: auto 100%/);
+  assert.match(css, /color: #bbb/);
+  assert.match(css, /text-shadow: 0 -1px 1px rgba\(0, 0, 0, 0\.75\)/);
+  assert.match(nav, /aria-current/);
   assert.match(css, /border-top: 1px solid rgba\(255, 255, 255, 0\.26\)/);
-  assert.match(site, /"Desktop", "\/desktop"/);
-  assert.match(site, /"Apps", "\/apps"/);
-  assert.match(site, /"Community", "\/community"/);
-  assert.match(site, /"Download", "\/download"/);
+  assert.match(nav, /"Desktop", "\/desktop"/);
+  assert.match(nav, /"Apps", "\/apps"/);
+  assert.match(nav, /"Community", "\/community"/);
+  assert.match(nav, /"Download", "\/download"/);
   assert.doesNotMatch(page, /WaitlistForm|AquariumCard|RealClock/);
   assert.doesNotMatch(page, /Skeuomorphic|Saf\. Şeffaf\. Güvenli|Aqua Linux, sadelik|Email address/);
   assert.doesNotMatch(page, /Estetiğimiz şeffaflıktan/);

@@ -123,21 +123,25 @@ a {
   align-items: center;
   justify-content: flex-end;
   gap: clamp(16px, 2.5vw, 32px);
-  color: rgba(246, 249, 252, 0.9);
   font-size: 13px;
-  font-weight: 600;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.48);
 }
 
 .nav-links a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
+  display: block;
+  height: 12px;
+  padding: 13px 12px 15px;
+  color: #bbb;
+  font-weight: 700;
+  line-height: 1;
   white-space: nowrap;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.75);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
   color: #ffffff;
+  text-decoration: none;
 }
 
 .hero {
