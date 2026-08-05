@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ReleaseCountdown } from "./countdown";
+import { InteractiveHero } from "./hero";
 import { navItems } from "./nav-items";
 import { PrimaryNav } from "./nav";
 
@@ -77,45 +77,7 @@ function Footer() {
 }
 
 export function Hero() {
-  return (
-    <section className="hero">
-      <p className="kicker">Thoughtful, capable, and open computing</p>
-      <h1>Aqua Linux</h1>
-      <p className="hero-copy">
-        A lightweight Linux project with a polished Aqua-inspired desktop
-        direction: simple enough to understand, refined enough to enjoy.
-      </p>
-
-      <div className="device-stage" aria-hidden="true">
-        <div className="device">
-          <div className="screen">
-            <div className="window">
-              <div className="traffic">
-                <span />
-                <span />
-                <span />
-              </div>
-              <div className="window-body">
-                <ReleaseCountdown />
-              </div>
-            </div>
-            <div className="desktop-dock">
-              <span className="dock-icon files" />
-              <span className="dock-icon terminal" />
-              <span className="dock-icon browser" />
-              <span className="dock-icon settings" />
-              <span className="dock-icon download" />
-            </div>
-          </div>
-          <div className="stand" />
-        </div>
-      </div>
-
-      <div className="download-row">
-        <a className="download-button" href="/download">Download</a>
-      </div>
-    </section>
-  );
+  return <InteractiveHero />;
 }
 
 export function WhatsNew() {
