@@ -41,10 +41,9 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /\.community-panel/);
   assert.match(css, /\.release-countdown/);
   assert.match(css, /\.desktop-dock/);
-  assert.match(css, /#313131/);
-  assert.match(css, /#171717/);
-  assert.match(css, /repeating-linear-gradient/);
-  assert.match(css, /repeating-radial-gradient/);
+  assert.match(css, /#303030/);
+  assert.match(css, /#1c1c1c/);
+  assert.match(css, /border-top: 1px solid rgba\(255, 255, 255, 0\.26\)/);
   assert.match(site, /"Desktop", "\/desktop"/);
   assert.match(site, /"Apps", "\/apps"/);
   assert.match(site, /"Community", "\/community"/);

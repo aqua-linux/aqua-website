@@ -15,9 +15,15 @@ function getRemaining() {
 }
 
 export function ReleaseCountdown() {
-  const [remaining, setRemaining] = useState(getRemaining);
+  const [remaining, setRemaining] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
+    setRemaining(getRemaining());
     const timer = window.setInterval(() => setRemaining(getRemaining()), 1_000);
     return () => window.clearInterval(timer);
   }, []);
