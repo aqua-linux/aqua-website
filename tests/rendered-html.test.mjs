@@ -49,7 +49,7 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /color: #bbb/);
   assert.match(css, /text-shadow: 0 -1px 1px rgba\(0, 0, 0, 0\.75\)/);
   assert.match(nav, /aria-current/);
-  assert.match(css, /border-top: 1px solid rgba\(255, 255, 255, 0\.26\)/);
+  assert.match(css, /border-top: 0/);
   assert.match(navItems, /"Desktop", "\/desktop"/);
   assert.match(navItems, /"Apps", "\/apps"/);
   assert.match(navItems, /"Community", "\/community"/);
