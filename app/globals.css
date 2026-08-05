@@ -66,9 +66,9 @@ a {
 }
 
 .appbar-inner {
-  display: grid;
-  grid-template-columns: minmax(150px, 1fr) auto;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 26px;
   width: min(1120px, 100%);
   min-height: 51px;
@@ -120,16 +120,17 @@ a {
 
 .nav-links {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-end;
-  gap: clamp(16px, 2.5vw, 32px);
+  gap: clamp(14px, 2vw, 26px);
   font-size: 13px;
 }
 
 .nav-links a {
-  display: block;
-  height: 12px;
-  padding: 13px 12px 15px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 51px;
+  padding: 0 12px;
   color: #bbb;
   font-weight: 700;
   line-height: 1;
