@@ -52,14 +52,14 @@ a {
   z-index: 10;
   min-height: 52px;
   padding: 0 clamp(14px, 4vw, 42px);
-  border-bottom: 1px solid rgba(118, 126, 135, 0.42);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.48);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.52) 46%, rgba(185, 191, 198, 0.54) 47%, rgba(142, 150, 158, 0.72)),
-    linear-gradient(180deg, #eef2f5, #aeb7c0);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent 24%, rgba(255, 255, 255, 0.08) 52%, transparent 82%),
+    linear-gradient(180deg, #59616a 0%, #424a53 42%, #2d343c 100%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.96),
-    inset 0 -1px 0 rgba(83, 94, 105, 0.18),
-    0 8px 22px rgba(45, 62, 78, 0.1);
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 22px rgba(20, 28, 36, 0.18);
 }
 
 .appbar-inner {
@@ -84,7 +84,7 @@ a {
   width: 152px;
   max-width: 42vw;
   height: auto;
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.72)) drop-shadow(0 5px 10px rgba(25, 62, 94, 0.16));
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.28)) drop-shadow(0 5px 12px rgba(0, 0, 0, 0.34));
 }
 
 .brand-mark,
@@ -120,10 +120,10 @@ a {
   align-items: center;
   justify-content: flex-end;
   gap: clamp(16px, 2.5vw, 32px);
-  color: #3d4650;
+  color: rgba(246, 249, 252, 0.9);
   font-size: 13px;
   font-weight: 600;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.78);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.48);
 }
 
 .nav-links a {
@@ -134,7 +134,7 @@ a {
 }
 
 .nav-links a:hover {
-  color: #167fd2;
+  color: #ffffff;
 }
 
 .hero {
