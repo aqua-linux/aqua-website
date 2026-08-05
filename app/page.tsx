@@ -1,10 +1,8 @@
-import { ArrowRight, Download, GitFork, ShieldCheck } from "lucide-react";
-
 const menuItems = ["Home", "Features", "Download", "Community", "Docs"];
 const cards = [
-  ["Fast", "Lightweight Buildroot base for quick boot and smooth daily use."],
-  ["Transparent", "A liquid-glass visual direction inspired by clear water and light."],
-  ["Open", "A small Linux project built to stay understandable and hackable."],
+  ["Fast", "Lightweight base, quick boot, smooth desktop feel."],
+  ["Aqua UI", "Glossy colors, soft depth, clear Frutiger Aero energy."],
+  ["Open", "Small, understandable, and built in the open."],
 ];
 
 export default function Home() {
@@ -12,7 +10,7 @@ export default function Home() {
     <main className="site-shell">
       <nav className="site-nav" aria-label="Primary navigation">
         <a className="brand" href="#home" aria-label="Aqua Linux home">
-          <img src="/aqua-mark-glass.png" alt="" />
+          <span className="brand-mark" aria-hidden="true">A</span>
           <span>
             <strong>Aqua</strong>
             <small>Linux</small>
@@ -28,41 +26,37 @@ export default function Home() {
         </div>
 
         <a className="nav-button" href="#download">
-          <Download aria-hidden="true" size={18} />
           Download
         </a>
       </nav>
 
       <section className="hero" id="home">
         <div className="hero-copy">
-          <p className="eyebrow">Pure. Modern. Transparent.</p>
+          <p className="eyebrow">Aqua colored Linux</p>
           <h1>
             Aqua <span>Linux</span>
           </h1>
           <p className="lead">
-            A clean, lightweight Linux experience with a calm liquid-glass
-            interface direction.
+            A simple Linux project page with glossy colors, clean menus, and a
+            cool late-2000s Aqua mood.
           </p>
 
           <div className="actions">
             <a className="primary-action" href="#download">
-              <Download aria-hidden="true" size={19} />
               Download Now
             </a>
             <a className="secondary-action" href="#features">
-              Explore
-              <ArrowRight aria-hidden="true" size={18} />
+              Explore -&gt;
             </a>
           </div>
 
           <p className="trust">
-            <ShieldCheck aria-hidden="true" size={18} />
             Secure - Stable - Open Source
           </p>
         </div>
 
-        <div className="hero-logo" aria-hidden="true">
-          <img src="/aqua-symbol-primary.png" alt="" />
+        <div className="aqua-badge" aria-hidden="true">
+          <span>A</span>
         </div>
       </section>
 
@@ -83,7 +77,6 @@ export default function Home() {
         <a href="#docs">Docs</a>
         <p>© 2026 Aqua Linux Project</p>
         <a href="https://github.com/" rel="noreferrer">
-          <GitFork aria-hidden="true" size={18} />
           GitHub
         </a>
       </footer>
