@@ -46,30 +46,45 @@ a {
   background: #fff;
 }
 
-.global-nav {
+.appbar {
   position: sticky;
   top: 0;
   z-index: 10;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 24px;
   min-height: 52px;
-  padding: 0 clamp(18px, 6vw, 112px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+  padding: 0 clamp(14px, 4vw, 42px);
+  border-bottom: 1px solid rgba(118, 126, 135, 0.42);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.08) 46%, rgba(0, 0, 0, 0.18) 47%, rgba(0, 0, 0, 0.36)),
-    linear-gradient(180deg, #72777b, #3f4448);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58), 0 8px 20px rgba(0, 0, 0, 0.12);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.52) 46%, rgba(185, 191, 198, 0.54) 47%, rgba(142, 150, 158, 0.72)),
+    linear-gradient(180deg, #eef2f5, #aeb7c0);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    inset 0 -1px 0 rgba(83, 94, 105, 0.18),
+    0 8px 22px rgba(45, 62, 78, 0.1);
+}
+
+.appbar-inner {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) auto;
+  align-items: center;
+  gap: 26px;
+  width: min(1120px, 100%);
+  min-height: 52px;
+  margin: 0 auto;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
   width: fit-content;
-  color: white;
-  font-weight: 600;
+  min-width: 0;
+}
+
+.brand img {
+  display: block;
+  width: 152px;
+  max-width: 42vw;
+  height: auto;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.72)) drop-shadow(0 5px 10px rgba(25, 62, 94, 0.16));
 }
 
 .brand-mark,
@@ -103,10 +118,23 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(18px, 3vw, 34px);
-  color: rgba(255, 255, 255, 0.9);
+  justify-content: flex-end;
+  gap: clamp(16px, 2.5vw, 32px);
+  color: #3d4650;
   font-size: 13px;
   font-weight: 600;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #167fd2;
 }
 
 .hero {
@@ -116,6 +144,35 @@ a {
   background:
     radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.74), transparent 16rem),
     linear-gradient(180deg, #ffffff 0%, #fbfdff 54%, #f2f7fb 100%);
+}
+
+.subpage-hero {
+  display: grid;
+  justify-items: center;
+  padding: 70px clamp(20px, 6vw, 112px) 64px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(112, 213, 247, 0.18), transparent 19rem),
+    linear-gradient(180deg, #ffffff, #f5f9fc);
+}
+
+.subpage-hero h1 {
+  max-width: 920px;
+  margin: 8px 0 12px;
+  color: #49535d;
+  font-size: clamp(44px, 6vw, 76px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.subpage-hero p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: #687684;
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .kicker,
@@ -284,6 +341,15 @@ a {
   text-align: center;
 }
 
+.aqua-orb-img {
+  display: block;
+  width: 78px;
+  height: 78px;
+  margin-bottom: 18px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(26, 123, 198, 0.18));
+}
+
 .aqua-orb {
   width: 74px;
   height: 74px;
@@ -339,6 +405,55 @@ a {
   border: 1px solid #e1e7ec;
   background: white;
   box-shadow: 0 18px 36px rgba(33, 54, 73, 0.06);
+}
+
+.app-showcase {
+  padding: 76px clamp(20px, 6vw, 112px);
+  background: white;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(960px, 100%);
+  margin: 0 auto;
+}
+
+.app-card {
+  min-height: 214px;
+  padding: 28px;
+  border: 1px solid #dfe7ee;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(246, 250, 252, 0.96)),
+    #fbfdfe;
+  box-shadow: 0 18px 34px rgba(35, 54, 70, 0.06);
+}
+
+.app-card span {
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(42, 153, 223, 0.42);
+  border-radius: 11px;
+  background:
+    radial-gradient(circle at 34% 24%, rgba(255, 255, 255, 0.94), transparent 1.3rem),
+    linear-gradient(180deg, #f8fdff, #78e7ff 48%, #1b8bea);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+
+.app-card h3 {
+  margin: 0 0 10px;
+  color: #3f4953;
+  font-size: 21px;
+}
+
+.app-card p {
+  margin: 0;
+  color: #6d7984;
+  line-height: 1.55;
 }
 
 .card-icon {
@@ -438,6 +553,54 @@ a {
   border-radius: 4px;
 }
 
+.download-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.download-actions .download-button {
+  margin-top: 0;
+}
+
+.community-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 76px clamp(20px, 6vw, 112px);
+  background: #f7f9fb;
+}
+
+.community-panel article {
+  width: min(520px, 100%);
+  min-height: 190px;
+  padding: 30px;
+  border: 1px solid #dfe7ee;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 18px 36px rgba(33, 54, 73, 0.06);
+}
+
+.community-panel article:first-child {
+  justify-self: end;
+}
+
+.community-panel h2 {
+  margin: 0 0 12px;
+  color: #3f4953;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.community-panel p {
+  margin: 0;
+  color: #6d7984;
+  line-height: 1.6;
+}
+
 .footer {
   padding: 30px clamp(20px, 6vw, 112px);
   border-top: 1px solid #e4eaef;
@@ -463,10 +626,11 @@ a {
 }
 
 @media (max-width: 980px) {
-  .global-nav {
+  .appbar-inner {
     grid-template-columns: 1fr;
     justify-items: center;
     padding-block: 10px;
+    gap: 8px;
   }
 
   .hero {
@@ -474,17 +638,24 @@ a {
   }
 
   .feature-grid,
-  .edition-list {
+  .edition-list,
+  .app-grid,
+  .community-panel {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .community-panel article:first-child {
+    justify-self: stretch;
   }
 }
 
 @media (max-width: 680px) {
-  .global-nav {
+  .appbar {
     position: static;
   }
 
   .nav-links {
+    justify-content: center;
     flex-wrap: wrap;
     gap: 12px 18px;
   }
@@ -511,7 +682,9 @@ a {
   }
 
   .feature-grid,
-  .edition-list {
+  .edition-list,
+  .app-grid,
+  .community-panel {
     grid-template-columns: 1fr;
   }
 
