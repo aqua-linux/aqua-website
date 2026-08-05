@@ -117,6 +117,13 @@ a {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
 }
 
+.appbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(14px, 2vw, 26px);
+}
+
 .nav-links {
   display: flex;
   align-items: stretch;
@@ -142,6 +149,30 @@ a {
 .nav-links a[aria-current="page"] {
   color: #ffffff;
   text-decoration: none;
+}
+
+.appbar-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0 14px;
+  border: 1px solid #1686d8;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.32);
+  background: linear-gradient(180deg, #6ed1ff, #2798e7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+.appbar-download:hover {
+  background: linear-gradient(180deg, #7fdaff, #2ea3f0);
 }
 
 .hero {
@@ -764,10 +795,16 @@ a {
 
 @media (max-width: 980px) {
   .appbar-inner {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     padding-block: 10px;
-    gap: 8px;
+    gap: 8px 18px;
+  }
+
+  .appbar-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
   }
 
   .hero {

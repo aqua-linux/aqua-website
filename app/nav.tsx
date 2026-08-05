@@ -3,12 +3,14 @@
 import { usePathname } from "next/navigation";
 import { navItems } from "./nav-items";
 
+const primaryNavItems = navItems.filter(([item]) => item !== "Download");
+
 export function PrimaryNav() {
   const pathname = usePathname();
 
   return (
     <nav className="nav-links" aria-label="Primary navigation">
-      {navItems.map(([item, href]) => {
+      {primaryNavItems.map(([item, href]) => {
         const isActive = href === "/" ? pathname === "/" : pathname?.startsWith(href);
 
         return (

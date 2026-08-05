@@ -62,9 +62,6 @@ export function InteractiveHero() {
         </div>
       </div>
 
-      <div className="download-row">
-        <a className="download-button" href="/download">Download</a>
-      </div>
     </section>
   );
 }

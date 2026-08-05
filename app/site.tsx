@@ -55,7 +55,10 @@ function Header() {
         <a className="brand" href="/" aria-label="Aqua Linux home">
           <img src="/aqua-wordmark-glass.png" alt="Aqua Linux" />
         </a>
-        <PrimaryNav />
+        <div className="appbar-actions">
+          <PrimaryNav />
+          <a className="appbar-download" href="/download">Download</a>
+        </div>
       </div>
     </header>
   );

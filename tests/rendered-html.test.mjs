@@ -25,7 +25,8 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(hero, /Thoughtful, capable, and open computing/);
   assert.match(hero, /A lightweight Linux project/);
   assert.match(site, /Friendly desktop/);
-  assert.match(hero, />Download</);
+  assert.match(site, /appbar-download/);
+  assert.match(site, />Download</);
   assert.match(hero, /ReleaseCountdown/);
   assert.match(hero, /desktop-dock/);
   assert.match(hero, /hero-night\.jpg/);
@@ -33,6 +34,7 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(hero, /hero-lagoon\.jpg/);
   assert.match(hero, /hero-meadow\.jpg/);
   assert.match(hero, /aria-pressed/);
+  assert.doesNotMatch(hero, /download-row/);
   assert.match(countdown, /First release in/);
   assert.match(countdown, /2027-09-01/);
   assert.match(countdown, /seconds/);
@@ -56,7 +58,10 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /background-size: auto 100%/);
   assert.match(css, /color: #bbb/);
   assert.match(css, /text-shadow: 0 -1px 1px rgba\(0, 0, 0, 0\.75\)/);
+  assert.match(css, /\.appbar-download/);
+  assert.match(css, /\.appbar-actions/);
   assert.match(nav, /aria-current/);
+  assert.match(nav, /primaryNavItems/);
   assert.match(css, /border-top: 0/);
   assert.match(navItems, /"Desktop", "\/desktop"/);
   assert.match(navItems, /"Apps", "\/apps"/);
