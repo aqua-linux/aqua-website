@@ -122,10 +122,7 @@ export function Hero() {
       </div>
 
       <div className="download-row">
-        <span>First preview builds</span>
-        <a className="price-chip" href="/download">ISO</a>
-        <a className="price-chip" href="/download">QEMU</a>
-        <a className="download-button" href="/download">Download Aqua</a>
+        <a className="download-button" href="/download">Download</a>
       </div>
     </section>
   );
@@ -227,8 +224,7 @@ export function DownloadPanel() {
       <h2>Download Aqua Linux</h2>
       <p>Simple page. Clear project. Cool Aqua energy.</p>
       <div className="download-actions">
-        <a className="download-button" href="/download">Get Aqua</a>
-        <a className="price-chip" href="/community">Follow progress</a>
+        <a className="download-button" href="/download">Download</a>
       </div>
     </section>
   );

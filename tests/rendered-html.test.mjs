@@ -21,7 +21,8 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(site, /Thoughtful, capable, and open computing/);
   assert.match(site, /A lightweight Linux project/);
   assert.match(site, /Friendly desktop/);
-  assert.match(site, /Download Aqua/);
+  assert.match(site, />Download</);
+  assert.doesNotMatch(site, /href="\/download">Download Aqua|ISO|QEMU|Get Aqua|First preview builds/);
   assert.match(desktop, /Aqua Desktop/);
   assert.match(apps, /Aqua Apps/);
   assert.match(community, /Open by default/);
