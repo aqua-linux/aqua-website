@@ -30,21 +30,21 @@ export function ReleaseCountdown() {
 
   return (
     <div className="release-countdown">
-      <p>First release in</p>
+      <p className="countdown-title">First release in</p>
       <div className="countdown-grid">
-        <span>
+        <span className="countdown-tile">
           <strong>{remaining.days}</strong>
           <small>days</small>
         </span>
-        <span>
+        <span className="countdown-tile">
           <strong>{remaining.hours.toString().padStart(2, "0")}</strong>
           <small>hours</small>
         </span>
-        <span>
+        <span className="countdown-tile">
           <strong>{remaining.minutes.toString().padStart(2, "0")}</strong>
           <small>minutes</small>
         </span>
-        <span>
+        <span className="countdown-tile">
           <strong>{remaining.seconds.toString().padStart(2, "0")}</strong>
           <small>seconds</small>
         </span>
