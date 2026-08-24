@@ -1,25 +1,59 @@
 import type { ReactNode } from "react";
+import {
+  ArrowRight,
+  Code2,
+  Download,
+  FileText,
+  Folder,
+  GitBranch,
+  Globe2,
+  Headphones,
+  Image,
+  MessageCircle,
+  PlayCircle,
+  PlaySquare,
+  Shield,
+  Settings,
+  ShoppingBag,
+  Users,
+  Zap,
+} from "lucide-react";
 import { InteractiveHero } from "./hero";
 import { navItems } from "./nav-items";
 import { PrimaryNav } from "./nav";
 
 const featureCards = [
   {
-    title: "Friendly desktop",
-    body: "A clean desktop direction with simple defaults, soft color, and no visual noise.",
+    title: "Fast & Efficient",
+    body: "Optimized for performance so you can get more done.",
+    icon: Zap,
   },
   {
-    title: "Lightweight core",
-    body: "A small Buildroot-based foundation focused on quick boot and predictable behavior.",
+    title: "Secure by Default",
+    body: "Built-in security features keep you safe and private.",
+    icon: Shield,
   },
   {
-    title: "Aqua app style",
-    body: "Glossy 2D controls, clear panels, and Frutiger Aero color without heavy imagery.",
+    title: "Clean & Minimal",
+    body: "A modern look with the simplicity you need.",
+    icon: DropletIcon,
   },
   {
-    title: "Open project",
-    body: "Designed to stay understandable for contributors, tinkerers, and first-time users.",
+    title: "Open & Free",
+    body: "100% open source and built with the community.",
+    icon: Code2,
   },
+];
+
+const appCards = [
+  ["Web", Globe2],
+  ["Files", Folder],
+  ["Store", ShoppingBag],
+  ["Settings", Settings],
+  ["Office", FileText],
+  ["Multimedia", PlayCircle],
+  ["Graphics", Image],
+  ["Development", Code2],
 ];
 
 const editions = [
@@ -28,10 +62,10 @@ const editions = [
   ["Aqua Tools", "Small utilities for builds, checks, and development."],
 ];
 
-const appCards = [
-  ["Files", "Clear folders, simple sidebars, and quick places for daily work."],
-  ["Terminal", "A fast shell surface for builds, checks, and project utilities."],
-  ["Settings", "Readable controls with fewer nested decisions."],
+const newsCards = [
+  ["May 20, 2024", "Aqua Linux 1.2 “Calm” Released", "Better performance, new features, and bug fixes. Aqua Linux 1.2 is here!", "1.2"],
+  ["May 5, 2024", "New Software Center", "Discover and install your favorite apps easier than ever.", "bag"],
+  ["April 18, 2024", "The Community Keeps Growing", "Aqua Linux is growing every day. Thanks to everyone who supports us!", "users"],
 ];
 
 type PageShellProps = {
@@ -53,11 +87,15 @@ function Header() {
     <header className="appbar">
       <div className="appbar-inner">
         <a className="brand" href="/" aria-label="Aqua Linux home">
-          <img src="/aqua-wordmark-glass.png" alt="Aqua Linux" />
+          <span className="brand-icon"><img src="/aqua-icon-black.png" alt="" /></span>
+          <span className="brand-name">Aqua Linux</span>
         </a>
         <div className="appbar-actions">
           <PrimaryNav />
-          <a className="appbar-download" href="/download">Download</a>
+          <a className="appbar-download" href="/download">
+            <Download size={15} strokeWidth={2.2} />
+            Download
+          </a>
         </div>
       </div>
     </header>
@@ -66,15 +104,41 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="footer">
-      <p>Aqua Linux</p>
-      <nav aria-label="Footer navigation">
-        {navItems.map(([item, href]) => (
+    <footer className="footer" id="about">
+      <div className="footer-brand">
+        <div className="footer-lockup" aria-label="Aqua Linux">
+          <span className="brand-icon"><img src="/aqua-icon-black.png" alt="" /></span>
+          <strong>Aqua Linux</strong>
+        </div>
+        <p>A modern, fast and secure Linux distribution.</p>
+        <div className="social-links" aria-label="Social links">
+          <a href="https://github.com/aqua-linux" aria-label="Source"><GitBranch size={20} /></a>
+          <a href="/community" aria-label="Community"><MessageCircle size={20} /></a>
+          <a href="/community" aria-label="Videos"><PlaySquare size={20} /></a>
+        </div>
+      </div>
+      <nav aria-label="Product navigation">
+        <h2>Product</h2>
+        {navItems.slice(1).map(([item, href]) => (
           <a href={href} key={item}>
             {item}
           </a>
         ))}
+        <a href="/download">Download</a>
       </nav>
+      <nav aria-label="Community navigation">
+        <h2>Community</h2>
+        <a href="/community">Forums</a>
+        <a href="/community">Contribute</a>
+        <a href="/community">Blog</a>
+      </nav>
+      <nav aria-label="Support navigation">
+        <h2>Support</h2>
+        <a href="/download">Installation Guide</a>
+        <a href="/community">FAQ</a>
+        <a href="/community">Contact</a>
+      </nav>
+      <p className="footer-copy">© 2025 Aqua Linux. All rights reserved.</p>
     </footer>
   );
 }
@@ -85,7 +149,63 @@ export function Hero() {
 
 export function WhatsNew() {
   return (
-    <section className="whats-new">
+    <section className="news-section" id="news">
+      <div className="section-heading split-heading">
+        <div>
+          <p className="section-kicker">News</p>
+          <h2>Latest updates</h2>
+        </div>
+        <a className="light-button" href="/community">
+          View all news
+          <ArrowRight size={16} />
+        </a>
+      </div>
+      <div className="news-grid">
+        {newsCards.map(([date, title, body, badge]) => (
+          <article className="news-card" key={title}>
+            <p>{date}</p>
+            <h3>{title}</h3>
+            <span>{body}</span>
+            <a href="/community">Read more <ArrowRight size={14} /></a>
+            <div className="news-badge" aria-hidden="true">
+              {badge === "bag" ? <ShoppingBag size={30} /> : badge === "users" ? <Users size={30} /> : badge}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function WaitlistPanel() {
+  return (
+    <section className="support-panel" id="support">
+      <div className="waitlist-icon" aria-hidden="true">
+        <Headphones size={42} />
+      </div>
+      <div className="waitlist-copy">
+        <h2>We are here to help</h2>
+        <p>
+          Get help, find answers, and connect with the Aqua Linux community.
+        </p>
+      </div>
+      <nav className="support-links" aria-label="Support links">
+        <a href="/download">Installation Guide <ArrowRight size={15} /></a>
+        <a href="/community">FAQs <ArrowRight size={15} /></a>
+        <a href="/community">Community Forums <ArrowRight size={15} /></a>
+        <a href="/community">Contact Us <ArrowRight size={15} /></a>
+      </nav>
+      <div className="support-bubbles" aria-hidden="true">
+        <MessageCircle size={86} />
+        <MessageCircle size={112} />
+      </div>
+    </section>
+  );
+}
+
+export function LegacyWhatsNew() {
+  return (
+    <section className="legacy-whats-new">
       <img className="aqua-orb-img" src="/aqua-mark-glass.png" alt="" />
       <p className="section-kicker">What Aqua is becoming</p>
       <h2>A calm desktop that feels clear from the first boot.</h2>
@@ -100,22 +220,50 @@ export function WhatsNew() {
 
 export function FeatureSection() {
   return (
-    <section className="feature-section">
-      <div className="section-heading">
-        <p className="section-kicker">Features</p>
-        <h2>Small surface. Useful details.</h2>
-      </div>
+    <section className="feature-section" id="features">
       <div className="feature-grid">
-        {featureCards.map((item) => (
+        {featureCards.map((item) => {
+          const Icon = item.icon;
+
+          return (
           <article className="feature-card" key={item.title}>
-            <span className="card-icon" aria-hidden="true" />
+            <Icon className="card-icon" aria-hidden="true" size={42} />
             <h3>{item.title}</h3>
             <p>{item.body}</p>
+          </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+export function ApplicationsSection() {
+  return (
+    <section className="applications-section" id="applications">
+      <div className="applications-copy">
+        <p className="section-kicker">Applications</p>
+        <h2>Everything you need, already included.</h2>
+        <p>Aqua Linux comes with essential applications and the ability to install thousands more.</p>
+        <a className="light-button" href="/apps">
+          Explore all apps
+          <ArrowRight size={16} />
+        </a>
+      </div>
+      <div className="app-grid">
+        {appCards.map(([title, Icon]) => (
+          <article className="app-card" key={title}>
+            <Icon aria-hidden="true" size={38} />
+            <h3>{title}</h3>
           </article>
         ))}
       </div>
     </section>
   );
+}
+
+export function AppShowcase() {
+  return <ApplicationsSection />;
 }
 
 export function AeroBand() {
@@ -126,26 +274,6 @@ export function AeroBand() {
         Aqua Linux starts small: bootable images, clear recovery tools, and a
         desktop language that can grow without becoming complicated.
       </p>
-    </section>
-  );
-}
-
-export function AppShowcase() {
-  return (
-    <section className="app-showcase">
-      <div className="section-heading">
-        <p className="section-kicker">Aqua apps</p>
-        <h2>Simple tools with a soft desktop language.</h2>
-      </div>
-      <div className="app-grid">
-        {appCards.map(([title, body]) => (
-          <article className="app-card" key={title}>
-            <span />
-            <h3>{title}</h3>
-            <p>{body}</p>
-          </article>
-        ))}
-      </div>
     </section>
   );
 }
@@ -169,6 +297,14 @@ export function Editions() {
         ))}
       </div>
     </section>
+  );
+}
+
+function DropletIcon({ className, size = 42 }: { className?: string; size?: number }) {
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3.2C15.7 7.6 18 11.1 18 14.2C18 17.7 15.3 20.2 12 20.2C8.7 20.2 6 17.7 6 14.2C6 11.1 8.3 7.6 12 3.2Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 

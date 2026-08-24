@@ -1,67 +1,38 @@
 "use client";
 
-import type { CSSProperties } from "react";
-import { useState } from "react";
-import { ReleaseCountdown } from "./countdown";
-
-const wallpapers = [
-  { name: "Night coast", src: "/hero-night.jpg" },
-  { name: "Aero globe", src: "/hero-aero-globe.jpg" },
-  { name: "Blue lagoon", src: "/hero-lagoon.jpg" },
-  { name: "Summer meadow", src: "/hero-meadow.jpg" },
-];
+import { ArrowRight, Download, Heart } from "lucide-react";
 
 export function InteractiveHero() {
-  const [activeWallpaper, setActiveWallpaper] = useState(wallpapers[1]);
-  const heroStyle = {
-    "--hero-wallpaper": `url("${activeWallpaper.src}")`,
-  } as CSSProperties;
-
   return (
-    <section className="hero hero-wallpaper" style={heroStyle}>
-      <p className="kicker">Built on modernity, graced by the elegance of the past.</p>
-      <h1>Aqua Linux</h1>
-      <p className="hero-copy">
-        A lightweight Linux project with a polished Aqua-inspired desktop
-        direction: simple enough to understand, refined enough to enjoy.
-      </p>
-
-      <div className="device-stage">
-        <div className="device">
-          <div className="screen" style={heroStyle}>
-            <div className="window">
-              <div className="traffic">
-                <span />
-                <span />
-                <span />
-              </div>
-              <div className="window-body">
-                <ReleaseCountdown />
-              </div>
-            </div>
-            <div className="desktop-dock" aria-label="Wallpaper choices">
-              {wallpapers.map((wallpaper) => {
-                const isActive = activeWallpaper.src === wallpaper.src;
-
-                return (
-                  <button
-                    aria-label={`Use ${wallpaper.name} wallpaper`}
-                    aria-pressed={isActive}
-                    className="dock-icon"
-                    key={wallpaper.src}
-                    onClick={() => setActiveWallpaper(wallpaper)}
-                    type="button"
-                  >
-                    <img src={wallpaper.src} alt="" />
-                  </button>
-                );
-              })}
-            </div>
+    <section className="hero">
+      <div className="hero-grid">
+        <div className="hero-copy-block">
+          <p className="kicker">Simple. Stable. Secure.</p>
+          <h1>A modern Linux for everyone.</h1>
+          <p className="hero-copy">
+            Aqua Linux is a fast, secure and beautiful Linux distribution
+            designed to make your everyday computing experience simple,
+            efficient and enjoyable.
+          </p>
+          <div className="hero-actions">
+            <a className="primary-cta" href="/download">
+              <Download size={16} />
+              Download Aqua Linux
+            </a>
+            <a className="secondary-cta" href="#features">
+              Learn More
+              <ArrowRight size={15} />
+            </a>
           </div>
-          <div className="stand" />
+          <p className="hero-note">
+            <Heart size={18} />
+            Open source. Community driven. Made for you.
+          </p>
+        </div>
+        <div className="hero-device">
+          <img src="/aqua-hero-laptop-light.png" alt="Aqua Linux desktop on a laptop" />
         </div>
       </div>
-
     </section>
   );
 }

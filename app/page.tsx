@@ -1,9 +1,9 @@
 import {
-  AeroBand,
-  AppShowcase,
+  ApplicationsSection,
   FeatureSection,
   Hero,
   PageShell,
+  WaitlistPanel,
   WhatsNew,
 } from "./site";
 
@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <PageShell>
       <Hero />
-      <WhatsNew />
       <FeatureSection />
-      <AeroBand />
-      <AppShowcase />
+      <ApplicationsSection />
+      <WaitlistPanel />
+      <WhatsNew />
     </PageShell>
   );
 }

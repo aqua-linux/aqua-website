@@ -30,7 +30,7 @@ export function ReleaseCountdown() {
 
   return (
     <div className="release-countdown">
-      <p className="countdown-title">First release in</p>
+      <p className="countdown-title">The wave begins in</p>
       <div className="countdown-grid">
         <span className="countdown-tile">
           <strong>{remaining.days}</strong>
