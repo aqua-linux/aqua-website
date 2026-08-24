@@ -217,9 +217,7 @@ export function FeatureSection() {
       <div className="feature-grid">
         {featureCards.map((item) => (
           <article className="feature-card" key={item.title}>
-            <span className="feature-icon-frame" aria-hidden="true">
-              <span className={`feature-icon ${item.icon}`} />
-            </span>
+            <span className={`feature-icon ${item.icon}`} aria-hidden="true" />
             <h3>{item.title}</h3>
             <p>{item.body}</p>
           </article>
