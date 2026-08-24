@@ -25,7 +25,7 @@ test("defines the Aqua Linux product site content", async () => {
   assert.doesNotMatch(hero, /Simple\. Stable\. Secure\./);
   assert.match(hero, /A modern Linux for everyone\./);
   assert.match(hero, /aqua-hero-laptop-dock\.png/);
-  assert.match(site, /Everything you need, already included\./);
+  assert.doesNotMatch(site, /<h2>Everything you need, already included\.<\/h2>/);
   assert.match(css, /aqua-app-icons-sprite\.png/);
   assert.match(css, /\.app-icon-terminal/);
   assert.match(css, /\.app-icon-camera/);

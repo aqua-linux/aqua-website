@@ -230,12 +230,7 @@ export function ApplicationsSection() {
   return (
     <section className="applications-section">
       <div className="applications-copy">
-        <h2>Everything you need, already included.</h2>
         <p>Aqua Linux comes with essential applications and the ability to install thousands more.</p>
-        <a className="light-button" href="/apps">
-          Explore all apps
-          <ArrowRight size={16} />
-        </a>
       </div>
       <div className="app-grid">
         {appCards.map((app) => (
@@ -245,6 +240,10 @@ export function ApplicationsSection() {
           </article>
         ))}
       </div>
+      <a className="light-button applications-button" href="/apps">
+        Explore all apps
+        <ArrowRight size={16} />
+      </a>
     </section>
   );
 }
