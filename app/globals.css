@@ -1048,6 +1048,40 @@ input {
   text-underline-offset: 4px;
 }
 
+.coming-soon-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  width: min(760px, calc(100% - 44px));
+  margin: 0 auto 84px;
+  padding: 28px;
+  border: 1px solid var(--panel-line);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.07);
+}
+
+.coming-soon-panel h2 {
+  margin: 0 0 10px;
+  color: #071426;
+  font-size: 22px;
+  font-weight: 650;
+}
+
+.coming-soon-panel p {
+  max-width: 420px;
+  margin: 0;
+  color: rgba(7, 20, 38, 0.62);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.coming-soon-panel .primary-cta svg:first-child {
+  width: 18px;
+  height: 18px;
+}
+
 .subpage-hero h1 {
   max-width: 920px;
   margin: 8px 0 12px;
@@ -1243,6 +1277,13 @@ input {
 
   .support-panel {
     padding: 26px 20px;
+  }
+
+  .coming-soon-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 52px;
+    padding: 24px;
   }
 
   .waitlist-form {

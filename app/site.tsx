@@ -117,22 +117,22 @@ function Footer() {
       </nav>
       <nav aria-label="Community navigation">
         <h2>Community</h2>
-        <a href="/community">Forums</a>
-        <a href="/community">Contribute</a>
-        <a href="/community">Blog</a>
+        <a href="/coming-soon">Forums</a>
+        <a href="/coming-soon">Contribute</a>
+        <a href="/coming-soon">Blog</a>
       </nav>
       <nav aria-label="Support navigation">
         <h2>Support</h2>
-        <a href="/download">Installation Guide</a>
-        <a href="/community">FAQ</a>
-        <a href="/community">Contact</a>
+        <a href="/coming-soon">Installation Guide</a>
+        <a href="/coming-soon">FAQ</a>
+        <a href="/coming-soon">Contact</a>
       </nav>
       <p className="footer-copy">© 2025 Aqua Linux. All rights reserved.</p>
     </footer>
   );
 }
 
-function GithubMark() {
+export function GithubMark() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path
@@ -154,7 +154,7 @@ export function WhatsNew() {
         <div>
           <h2>Latest updates</h2>
         </div>
-        <a className="light-button" href="/community">
+        <a className="light-button" href="/coming-soon">
           View all news
           <ArrowRight size={16} />
         </a>
@@ -165,7 +165,7 @@ export function WhatsNew() {
             <p>{date}</p>
             <h3>{title}</h3>
             <span>{body}</span>
-            <a href="/community">Read more <ArrowRight size={14} /></a>
+            <a href="/coming-soon">Read more <ArrowRight size={14} /></a>
             <div className="news-badge" aria-hidden="true">
               {badge === "bag" ? <ShoppingBag size={30} /> : badge === "users" ? <Users size={30} /> : badge}
             </div>
@@ -188,10 +188,10 @@ export function WaitlistPanel() {
         </p>
       </div>
       <nav className="support-links" aria-label="Support links">
-        <a href="/download">Installation Guide <ArrowRight size={15} /></a>
-        <a href="/community">FAQs <ArrowRight size={15} /></a>
-        <a href="/community">Community Forums <ArrowRight size={15} /></a>
-        <a href="/community">Contact Us <ArrowRight size={15} /></a>
+        <a href="/coming-soon">Installation Guide <ArrowRight size={15} /></a>
+        <a href="/coming-soon">FAQs <ArrowRight size={15} /></a>
+        <a href="/coming-soon">Community Forums <ArrowRight size={15} /></a>
+        <a href="/coming-soon">Contact Us <ArrowRight size={15} /></a>
       </nav>
       <div className="support-bubbles" aria-hidden="true">
         <MessageCircle size={86} />

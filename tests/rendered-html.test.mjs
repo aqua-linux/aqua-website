@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("defines the Aqua Linux product site content", async () => {
-  const [page, layout, css, site, hero, nav, navItems, countdown, desktop, apps, community, download] = await Promise.all([
+  const [page, layout, css, site, hero, nav, navItems, countdown, desktop, apps, community, download, comingSoon] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -16,6 +16,7 @@ test("defines the Aqua Linux product site content", async () => {
     readFile(new URL("../app/apps/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/community/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/download/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/coming-soon/page.tsx", import.meta.url), "utf8"),
   ]);
 
   assert.match(layout, /Aqua Linux - Light\. Fast\. Fluid\./);
@@ -67,6 +68,12 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(download, /https:\/\/github\.com\/aqua-linux/);
   assert.match(download, /support the project/);
   assert.doesNotMatch(download, /Preview builds/);
+  assert.match(comingSoon, /Coming soon/);
+  assert.match(comingSoon, /This part is still taking shape\./);
+  assert.match(comingSoon, /https:\/\/github\.com\/aqua-linux/);
+  assert.match(site, /href="\/coming-soon">Forums/);
+  assert.match(site, /href="\/coming-soon">Contribute/);
+  assert.match(site, /href="\/coming-soon">FAQ/);
   assert.match(css, /\.appbar/);
   assert.match(css, /\.appbar-inner/);
   assert.match(css, /\.subpage-hero/);
@@ -76,6 +83,7 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /\.support-panel/);
   assert.match(css, /\.applications-section/);
   assert.match(css, /\.news-section/);
+  assert.match(css, /\.coming-soon-panel/);
   assert.doesNotMatch(css, /\.hero::before|\.hero::after/);
   assert.doesNotMatch(css, /--hero-wallpaper/);
   assert.match(css, /background: var\(--dark\);/);
