@@ -1031,6 +1031,23 @@ input {
   margin-top: 0;
 }
 
+.download-follow-up {
+  width: min(560px, calc(100% - 44px));
+  margin: 24px auto 0;
+  color: rgba(7, 20, 38, 0.62);
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.download-follow-up a {
+  color: #071426;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(45, 114, 255, 0.42);
+  text-underline-offset: 4px;
+}
+
 .subpage-hero h1 {
   max-width: 920px;
   margin: 8px 0 12px;

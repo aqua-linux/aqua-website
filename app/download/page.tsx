@@ -8,12 +8,16 @@ export default function DownloadPage() {
         <PageHero
           kicker="Download"
           title="Aqua Linux is on the way."
-          copy="The first public download will open when the one-year countdown reaches zero."
+          copy="We are continuing development toward the Aqua Linux Alpha release, and we expect to publish the first version on August 24, 2027."
         />
         <ReleaseCountdown
           targetDate="2027-08-24T00:00:00Z"
           title="Download opens in"
         />
+        <p className="download-follow-up">
+          Follow the process or support the project on{" "}
+          <a href="https://github.com/aqua-linux">GitHub</a>.
+        </p>
       </section>
     </PageShell>
   );

@@ -60,8 +60,12 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(apps, /Aqua Apps/);
   assert.match(community, /Open by default/);
   assert.match(download, /Aqua Linux is on the way\./);
+  assert.match(download, /Alpha release/);
+  assert.match(download, /August 24, 2027/);
   assert.match(download, /2027-08-24/);
   assert.match(download, /Download opens in/);
+  assert.match(download, /https:\/\/github\.com\/aqua-linux/);
+  assert.match(download, /support the project/);
   assert.doesNotMatch(download, /Preview builds/);
   assert.match(css, /\.appbar/);
   assert.match(css, /\.appbar-inner/);
