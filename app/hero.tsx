@@ -23,15 +23,15 @@ export function InteractiveHero() {
               <ArrowRight size={15} />
             </a>
           </div>
-          <p className="hero-note">
-            <span className="hero-heart" aria-hidden="true">💙</span>
-            Open source. Community driven. Made for you.
-          </p>
         </div>
         <div className="hero-device">
           <img src="/aqua-hero-laptop-dock.png" alt="Aqua Linux desktop on a laptop" />
         </div>
       </div>
+      <p className="hero-note">
+        <span className="hero-heart" aria-hidden="true">💙</span>
+        Open source. Community driven. Made for you.
+      </p>
     </section>
   );
 }

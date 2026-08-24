@@ -310,9 +310,9 @@ input {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  width: 100%;
-  margin: 36px 0 0;
+  gap: 10px;
+  width: min(100%, 520px);
+  margin: 22px auto 0;
   color: rgba(7, 20, 38, 0.66);
   font-size: 14px;
   line-height: 1.5;
