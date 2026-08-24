@@ -666,11 +666,11 @@ input {
 }
 
 .app-card {
-  --app-icon-size: 108px;
+  --app-icon-size: 81px;
   display: grid;
-  grid-template-rows: 106px auto;
+  grid-template-rows: 80px auto;
   place-items: center;
-  min-height: 132px;
+  min-height: 108px;
   padding: 8px 10px 10px;
   border: 1px solid var(--panel-line);
   border-radius: 12px;
@@ -1182,9 +1182,9 @@ input {
   }
 
   .app-card {
-    --app-icon-size: 92px;
-    grid-template-rows: 90px auto;
-    min-height: 118px;
+    --app-icon-size: 69px;
+    grid-template-rows: 68px auto;
+    min-height: 96px;
     padding: 8px 8px 9px;
   }
 
