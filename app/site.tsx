@@ -5,8 +5,6 @@ import {
   Download,
   Headphones,
   MessageCircle,
-  ShoppingBag,
-  Users,
 } from "lucide-react";
 import { InteractiveHero } from "./hero";
 import { navItems } from "./nav-items";
@@ -51,12 +49,6 @@ const editions = [
   ["Aqua Desktop", "The default personal desktop experience."],
   ["Aqua Recovery", "A minimal rescue environment for system work."],
   ["Aqua Tools", "Small utilities for builds, checks, and development."],
-];
-
-const newsCards = [
-  ["May 20, 2024", "Aqua Linux 1.2 “Calm” Released", "Better performance, new features, and bug fixes. Aqua Linux 1.2 is here!", "1.2"],
-  ["May 5, 2024", "New Software Center", "Discover and install your favorite apps easier than ever.", "bag"],
-  ["April 18, 2024", "The Community Keeps Growing", "Aqua Linux is growing every day. Thanks to everyone who supports us!", "users"],
 ];
 
 type PageShellProps = {
@@ -150,28 +142,12 @@ export function Hero() {
 export function WhatsNew() {
   return (
     <section className="news-section">
-      <div className="section-heading split-heading">
-        <div>
-          <h2>Latest updates</h2>
-        </div>
-        <a className="light-button" href="/coming-soon">
-          View all news
-          <ArrowRight size={16} />
-        </a>
+      <div className="section-heading">
+        <h2>Latest updates</h2>
       </div>
-      <div className="news-grid">
-        {newsCards.map(([date, title, body, badge]) => (
-          <article className="news-card" key={title}>
-            <p>{date}</p>
-            <h3>{title}</h3>
-            <span>{body}</span>
-            <a href="/coming-soon">Read more <ArrowRight size={14} /></a>
-            <div className="news-badge" aria-hidden="true">
-              {badge === "bag" ? <ShoppingBag size={30} /> : badge === "users" ? <Users size={30} /> : badge}
-            </div>
-          </article>
-        ))}
-      </div>
+      <p className="news-placeholder">
+        New updates will be available here very soon.
+      </p>
     </section>
   );
 }

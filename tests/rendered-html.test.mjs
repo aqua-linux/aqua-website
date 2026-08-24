@@ -38,6 +38,9 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(site, /title: "Calendar"/);
   assert.doesNotMatch(site, /<h2>We are here to help<\/h2>/);
   assert.match(site, /Latest updates/);
+  assert.match(site, /New updates will be available here very soon\./);
+  assert.doesNotMatch(site, /Aqua Linux 1\.2/);
+  assert.doesNotMatch(site, /Read more/);
   assert.match(site, /Fast & Efficient/);
   assert.match(css, /features-sprite\.png/);
   assert.match(css, /\.fast/);
@@ -83,6 +86,8 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(css, /\.support-panel/);
   assert.match(css, /\.applications-section/);
   assert.match(css, /\.news-section/);
+  assert.match(css, /\.news-placeholder/);
+  assert.doesNotMatch(css, /\.news-card/);
   assert.match(css, /\.coming-soon-panel/);
   assert.doesNotMatch(css, /\.hero::before|\.hero::after/);
   assert.doesNotMatch(css, /--hero-wallpaper/);
