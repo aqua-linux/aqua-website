@@ -2,16 +2,13 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
-  Code2,
   Download,
   GitBranch,
   Headphones,
   MessageCircle,
   PlaySquare,
-  Shield,
   ShoppingBag,
   Users,
-  Zap,
 } from "lucide-react";
 import { InteractiveHero } from "./hero";
 import { navItems } from "./nav-items";
@@ -21,22 +18,22 @@ const featureCards = [
   {
     title: "Fast & Efficient",
     body: "Optimized for performance so you can get more done.",
-    icon: Zap,
+    icon: "fast",
   },
   {
     title: "Secure by Default",
     body: "Built-in security features keep you safe and private.",
-    icon: Shield,
+    icon: "secure",
   },
   {
     title: "Clean & Minimal",
     body: "A modern look with the simplicity you need.",
-    icon: DropletIcon,
+    icon: "clean",
   },
   {
     title: "Open & Free",
     body: "100% open source and built with the community.",
-    icon: Code2,
+    icon: "open",
   },
 ];
 
@@ -218,17 +215,13 @@ export function FeatureSection() {
   return (
     <section className="feature-section" id="features">
       <div className="feature-grid">
-        {featureCards.map((item) => {
-          const Icon = item.icon;
-
-          return (
+        {featureCards.map((item) => (
           <article className="feature-card" key={item.title}>
-            <Icon className="card-icon" aria-hidden="true" size={42} />
+            <span className={`feature-icon feature-icon-${item.icon}`} aria-hidden="true" />
             <h3>{item.title}</h3>
             <p>{item.body}</p>
           </article>
-          );
-        })}
+        ))}
       </div>
     </section>
   );
@@ -293,14 +286,6 @@ export function Editions() {
         ))}
       </div>
     </section>
-  );
-}
-
-function DropletIcon({ className, size = 42 }: { className?: string; size?: number }) {
-  return (
-    <svg className={className} width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 3.2C15.7 7.6 18 11.1 18 14.2C18 17.7 15.3 20.2 12 20.2C8.7 20.2 6 17.7 6 14.2C6 11.1 8.3 7.6 12 3.2Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
   );
 }
 

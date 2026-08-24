@@ -537,16 +537,30 @@ input {
   border-right: 0;
 }
 
-.card-icon {
-  width: 72px;
-  height: 72px;
-  margin-bottom: 24px;
-  padding: 17px;
-  border: 1px solid var(--panel-line);
-  border-radius: 50%;
-  color: #050b14;
-  background: #ffffff;
-  filter: none;
+.feature-icon {
+  display: block;
+  width: 92px;
+  height: 92px;
+  margin-bottom: 22px;
+  background-image: url("/feature-icons-sprite.png");
+  background-repeat: no-repeat;
+  background-size: 390.75px 130.32px;
+}
+
+.feature-icon-fast {
+  background-position: 0 0;
+}
+
+.feature-icon-secure {
+  background-position: -92px 0;
+}
+
+.feature-icon-clean {
+  background-position: -184px 0;
+}
+
+.feature-icon-open {
+  background-position: -276px 0;
 }
 
 .feature-card h3 {
