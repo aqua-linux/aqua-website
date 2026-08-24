@@ -41,15 +41,15 @@ const featureCards = [
 ];
 
 const appCards = [
-  { title: "Terminal", icon: "/app-icons/terminal.png" },
-  { title: "Files", icon: "/app-icons/files.png" },
-  { title: "Web", icon: "/app-icons/web.png" },
-  { title: "Mail", icon: "/app-icons/mail.png" },
-  { title: "Calendar", icon: "/app-icons/calendar.png" },
-  { title: "Photos", icon: "/app-icons/photos.png" },
-  { title: "Videos", icon: "/app-icons/videos.png" },
-  { title: "Music", icon: "/app-icons/music.png" },
-  { title: "Camera", icon: "/app-icons/camera.png" },
+  { title: "Terminal", icon: "terminal" },
+  { title: "Files", icon: "files" },
+  { title: "Web", icon: "web" },
+  { title: "Mail", icon: "mail" },
+  { title: "Calendar", icon: "calendar" },
+  { title: "Photos", icon: "photos" },
+  { title: "Videos", icon: "videos" },
+  { title: "Music", icon: "music" },
+  { title: "Camera", icon: "camera" },
 ];
 
 const editions = [
@@ -249,7 +249,7 @@ export function ApplicationsSection() {
       <div className="app-grid">
         {appCards.map((app) => (
           <article className="app-card" key={app.title}>
-            <img src={app.icon} alt="" aria-hidden="true" />
+            <span className={`app-icon app-icon-${app.icon}`} aria-hidden="true" />
             <h3>{app.title}</h3>
           </article>
         ))}

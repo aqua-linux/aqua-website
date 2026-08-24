@@ -664,8 +664,9 @@ input {
 }
 
 .app-card {
+  --app-icon-size: 112px;
   display: grid;
-  grid-template-rows: 104px auto;
+  grid-template-rows: 116px auto;
   place-items: center;
   min-height: 158px;
   padding: 18px 18px 20px;
@@ -678,11 +679,61 @@ input {
     0 18px 38px rgba(15, 23, 42, 0.055);
 }
 
-.app-card img {
+.app-icon {
   display: block;
-  width: min(124px, 86%);
-  max-height: 100px;
-  object-fit: contain;
+  width: var(--app-icon-size);
+  height: var(--app-icon-size);
+  background-image: url("/app-icons/aqua-app-icons-sprite.png");
+  background-repeat: no-repeat;
+  background-size: calc(var(--app-icon-size) * 5.4857) calc(var(--app-icon-size) * 3.6571);
+  background-position:
+    calc(var(--app-icon-size) * var(--sprite-x) * -1)
+    calc(var(--app-icon-size) * var(--sprite-y) * -1);
+}
+
+.app-icon-terminal {
+  --sprite-x: 1.0714;
+  --sprite-y: 0.2786;
+}
+
+.app-icon-files {
+  --sprite-x: 2.2429;
+  --sprite-y: 0.2786;
+}
+
+.app-icon-web {
+  --sprite-x: 3.4143;
+  --sprite-y: 0.2786;
+}
+
+.app-icon-mail {
+  --sprite-x: 1.0714;
+  --sprite-y: 1.3286;
+}
+
+.app-icon-calendar {
+  --sprite-x: 2.2429;
+  --sprite-y: 1.3286;
+}
+
+.app-icon-photos {
+  --sprite-x: 3.4143;
+  --sprite-y: 1.3286;
+}
+
+.app-icon-videos {
+  --sprite-x: 1.0714;
+  --sprite-y: 2.3786;
+}
+
+.app-icon-music {
+  --sprite-x: 2.2429;
+  --sprite-y: 2.3786;
+}
+
+.app-icon-camera {
+  --sprite-x: 3.4143;
+  --sprite-y: 2.3786;
 }
 
 .app-card h3 {
@@ -1130,14 +1181,10 @@ input {
   }
 
   .app-card {
+    --app-icon-size: 98px;
     grid-template-rows: 92px auto;
     min-height: 138px;
     padding: 14px 12px 16px;
-  }
-
-  .app-card img {
-    width: min(106px, 88%);
-    max-height: 88px;
   }
 
   .split-heading {
