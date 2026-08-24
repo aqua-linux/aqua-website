@@ -22,7 +22,7 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(page, /Hero/);
   assert.match(site, /aqua-icon-black\.png/);
   assert.match(site, /aqua-mark-glass\.png/);
-  assert.match(hero, /Simple\. Stable\. Secure\./);
+  assert.doesNotMatch(hero, /Simple\. Stable\. Secure\./);
   assert.match(hero, /A modern Linux for everyone\./);
   assert.match(hero, /aqua-hero-laptop-dock\.png/);
   assert.match(site, /Everything you need, already included\./);

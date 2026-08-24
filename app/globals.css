@@ -309,15 +309,18 @@ input {
 .hero-note {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  width: 100%;
   margin: 36px 0 0;
   color: rgba(7, 20, 38, 0.66);
   font-size: 14px;
   line-height: 1.5;
+  text-align: center;
 }
 
-.hero-note svg {
-  color: #050b14;
+.hero-heart {
+  line-height: 1;
 }
 
 .hero-device {

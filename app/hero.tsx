@@ -1,13 +1,12 @@
 "use client";
 
-import { ArrowRight, Download, Heart } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 export function InteractiveHero() {
   return (
     <section className="hero">
       <div className="hero-grid">
         <div className="hero-copy-block">
-          <p className="kicker">Simple. Stable. Secure.</p>
           <h1>A modern Linux for everyone.</h1>
           <p className="hero-copy">
             Aqua Linux is a fast, secure and beautiful Linux distribution
@@ -25,7 +24,7 @@ export function InteractiveHero() {
             </a>
           </div>
           <p className="hero-note">
-            <Heart size={18} />
+            <span className="hero-heart" aria-hidden="true">💙</span>
             Open source. Community driven. Made for you.
           </p>
         </div>
