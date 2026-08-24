@@ -34,7 +34,8 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(site, /Latest updates/);
   assert.match(site, /Fast & Efficient/);
   assert.match(css, /feature-icons-sprite\.png/);
-  assert.match(css, /\.feature-icon-fast/);
+  assert.match(css, /\.fast/);
+  assert.match(css, /background-position: -1536px 0/);
   assert.match(site, /feature-icon-/);
   assert.match(site, /appbar-download/);
   assert.match(site, />Download</);
