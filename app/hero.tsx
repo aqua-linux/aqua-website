@@ -30,7 +30,7 @@ export function InteractiveHero() {
           </p>
         </div>
         <div className="hero-device">
-          <img src="/aqua-hero-laptop-light.png" alt="Aqua Linux desktop on a laptop" />
+          <img src="/aqua-hero-laptop-dock.png" alt="Aqua Linux desktop on a laptop" />
         </div>
       </div>
     </section>
