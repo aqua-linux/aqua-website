@@ -3,10 +3,8 @@ import Link from "next/link";
 import {
   ArrowRight,
   Download,
-  GitBranch,
   Headphones,
   MessageCircle,
-  PlaySquare,
   ShoppingBag,
   Users,
 } from "lucide-react";
@@ -105,9 +103,7 @@ function Footer() {
         </div>
         <p>A modern, fast and secure Linux distribution.</p>
         <div className="social-links" aria-label="Social links">
-          <a href="https://github.com/aqua-linux" aria-label="Source"><GitBranch size={20} /></a>
-          <a href="/community" aria-label="Community"><MessageCircle size={20} /></a>
-          <a href="/community" aria-label="Videos"><PlaySquare size={20} /></a>
+          <a href="https://github.com/aqua-linux" aria-label="Aqua Linux on GitHub"><GithubMark /></a>
         </div>
       </div>
       <nav aria-label="Product navigation">
@@ -133,6 +129,17 @@ function Footer() {
       </nav>
       <p className="footer-copy">© 2025 Aqua Linux. All rights reserved.</p>
     </footer>
+  );
+}
+
+function GithubMark() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.38-3.37-1.38-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1.01.07 1.54 1.06 1.54 1.06.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.64-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 7c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.74 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.59.69.49A10.12 10.12 0 0 0 22 12.25C22 6.59 17.52 2 12 2Z"
+      />
+    </svg>
   );
 }
 
