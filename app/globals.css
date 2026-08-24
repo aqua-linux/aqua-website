@@ -687,55 +687,55 @@ input {
   height: var(--app-icon-size);
   background-image: url("/app-icons/aqua-app-icons-sprite.png");
   background-repeat: no-repeat;
-  background-size: calc(var(--app-icon-size) * 5.9077) calc(var(--app-icon-size) * 3.9385);
+  background-size: calc(var(--app-icon-size) * 6) calc(var(--app-icon-size) * 4);
   background-position:
     calc(var(--app-icon-size) * var(--sprite-x) * -1)
     calc(var(--app-icon-size) * var(--sprite-y) * -1);
 }
 
 .app-icon-terminal {
-  --sprite-x: 1.19;
-  --sprite-y: 0.35;
+  --sprite-x: 1.2227;
+  --sprite-y: 0.3594;
 }
 
 .app-icon-files {
-  --sprite-x: 2.45;
-  --sprite-y: 0.35;
+  --sprite-x: 2.5039;
+  --sprite-y: 0.3594;
 }
 
 .app-icon-web {
-  --sprite-x: 3.72;
-  --sprite-y: 0.35;
+  --sprite-x: 3.7773;
+  --sprite-y: 0.3594;
 }
 
 .app-icon-mail {
-  --sprite-x: 1.19;
-  --sprite-y: 1.47;
+  --sprite-x: 1.2227;
+  --sprite-y: 1.4414;
 }
 
 .app-icon-calendar {
-  --sprite-x: 2.45;
-  --sprite-y: 1.47;
+  --sprite-x: 2.5039;
+  --sprite-y: 1.4414;
 }
 
 .app-icon-photos {
-  --sprite-x: 3.72;
-  --sprite-y: 1.47;
+  --sprite-x: 3.7773;
+  --sprite-y: 1.4414;
 }
 
 .app-icon-videos {
-  --sprite-x: 1.19;
-  --sprite-y: 2.59;
+  --sprite-x: 1.2227;
+  --sprite-y: 2.5117;
 }
 
 .app-icon-music {
-  --sprite-x: 2.45;
-  --sprite-y: 2.59;
+  --sprite-x: 2.5039;
+  --sprite-y: 2.5117;
 }
 
 .app-icon-camera {
-  --sprite-x: 3.72;
-  --sprite-y: 2.59;
+  --sprite-x: 3.7773;
+  --sprite-y: 2.5117;
 }
 
 .app-card h3 {
