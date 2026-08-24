@@ -67,6 +67,7 @@ input {
 .appbar,
 .hero,
 .support-panel,
+.section-divider,
 .feature-section,
 .whats-new,
 .aero-band,
@@ -321,6 +322,50 @@ input {
 
 .hero-heart {
   line-height: 1;
+}
+
+.section-divider {
+  width: 100%;
+  margin: 42px 0 26px;
+  border-top: 1px solid rgba(9, 21, 37, 0.08);
+  border-bottom: 1px solid rgba(9, 21, 37, 0.08);
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.86), rgba(255, 255, 255, 0.98)),
+    #ffffff;
+}
+
+.section-divider-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  width: min(1130px, calc(100% - 44px));
+  min-height: 78px;
+  margin: 0 auto;
+  padding: 18px 0;
+}
+
+.section-divider p,
+.section-divider h2 {
+  margin: 0;
+}
+
+.section-divider p {
+  flex: 0 0 auto;
+  color: rgba(7, 20, 38, 0.52);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.section-divider h2 {
+  color: #071426;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 650;
+  line-height: 1.15;
+  text-align: right;
 }
 
 .hero-device {
@@ -1181,6 +1226,18 @@ input {
   .edition-list,
   .news-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section-divider-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    min-height: 0;
+    padding: 18px 0 20px;
+  }
+
+  .section-divider h2 {
+    text-align: left;
   }
 
   .app-grid {

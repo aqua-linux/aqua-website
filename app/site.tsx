@@ -142,10 +142,9 @@ export function Hero() {
 
 export function WhatsNew() {
   return (
-    <section className="news-section" id="news">
+    <section className="news-section">
       <div className="section-heading split-heading">
         <div>
-          <p className="section-kicker">News</p>
           <h2>Latest updates</h2>
         </div>
         <a className="light-button" href="/community">
@@ -172,7 +171,7 @@ export function WhatsNew() {
 
 export function WaitlistPanel() {
   return (
-    <section className="support-panel" id="support">
+    <section className="support-panel">
       <div className="waitlist-icon" aria-hidden="true">
         <Headphones size={42} />
       </div>
@@ -213,7 +212,7 @@ export function LegacyWhatsNew() {
 
 export function FeatureSection() {
   return (
-    <section className="feature-section" id="features">
+    <section className="feature-section">
       <div className="feature-grid">
         {featureCards.map((item) => (
           <article className="feature-card" key={item.title}>
@@ -229,9 +228,8 @@ export function FeatureSection() {
 
 export function ApplicationsSection() {
   return (
-    <section className="applications-section" id="applications">
+    <section className="applications-section">
       <div className="applications-copy">
-        <p className="section-kicker">Applications</p>
         <h2>Everything you need, already included.</h2>
         <p>Aqua Linux comes with essential applications and the ability to install thousands more.</p>
         <a className="light-button" href="/apps">
@@ -253,6 +251,25 @@ export function ApplicationsSection() {
 
 export function AppShowcase() {
   return <ApplicationsSection />;
+}
+
+export function SectionDivider({
+  id,
+  eyebrow,
+  title,
+}: {
+  id: string;
+  eyebrow: string;
+  title: string;
+}) {
+  return (
+    <section className="section-divider" id={id} aria-labelledby={`${id}-heading`}>
+      <div className="section-divider-inner">
+        <p>{eyebrow}</p>
+        <h2 id={`${id}-heading`}>{title}</h2>
+      </div>
+    </section>
+  );
 }
 
 export function AeroBand() {
