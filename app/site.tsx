@@ -142,9 +142,6 @@ export function Hero() {
 export function WhatsNew() {
   return (
     <section className="news-section">
-      <div className="section-heading">
-        <h2>Latest updates</h2>
-      </div>
       <p className="news-placeholder">
         New updates will be available here very soon.
       </p>
