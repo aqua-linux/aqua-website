@@ -18,7 +18,7 @@ test("defines the Aqua Linux product site content", async () => {
     readFile(new URL("../app/download/page.tsx", import.meta.url), "utf8"),
   ]);
 
-  assert.match(layout, /Aqua Linux - Buildroot Based Independent Distro/);
+  assert.match(layout, /Aqua Linux - Light\. Fast\. Fluid\./);
   assert.match(page, /Hero/);
   assert.match(site, /aqua-icon-black\.png/);
   assert.match(site, /aqua-mark-glass\.png/);
