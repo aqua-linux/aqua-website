@@ -1,19 +1,14 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import {
   ArrowRight,
   Code2,
   Download,
-  FileText,
-  Folder,
   GitBranch,
-  Globe2,
   Headphones,
-  Image,
   MessageCircle,
-  PlayCircle,
   PlaySquare,
   Shield,
-  Settings,
   ShoppingBag,
   Users,
   Zap,
@@ -46,14 +41,15 @@ const featureCards = [
 ];
 
 const appCards = [
-  ["Web", Globe2],
-  ["Files", Folder],
-  ["Store", ShoppingBag],
-  ["Settings", Settings],
-  ["Office", FileText],
-  ["Multimedia", PlayCircle],
-  ["Graphics", Image],
-  ["Development", Code2],
+  { title: "Terminal", icon: "/app-icons/terminal.png" },
+  { title: "Files", icon: "/app-icons/files.png" },
+  { title: "Web", icon: "/app-icons/web.png" },
+  { title: "Mail", icon: "/app-icons/mail.png" },
+  { title: "Calendar", icon: "/app-icons/calendar.png" },
+  { title: "Photos", icon: "/app-icons/photos.png" },
+  { title: "Videos", icon: "/app-icons/videos.png" },
+  { title: "Music", icon: "/app-icons/music.png" },
+  { title: "Camera", icon: "/app-icons/camera.png" },
 ];
 
 const editions = [
@@ -86,10 +82,10 @@ function Header() {
   return (
     <header className="appbar">
       <div className="appbar-inner">
-        <a className="brand" href="/" aria-label="Aqua Linux home">
+        <Link className="brand" href="/" aria-label="Aqua Linux home">
           <span className="brand-icon"><img src="/aqua-icon-black.png" alt="" /></span>
           <span className="brand-name">Aqua Linux</span>
-        </a>
+        </Link>
         <div className="appbar-actions">
           <PrimaryNav />
           <a className="appbar-download" href="/download">
@@ -251,10 +247,10 @@ export function ApplicationsSection() {
         </a>
       </div>
       <div className="app-grid">
-        {appCards.map(([title, Icon]) => (
-          <article className="app-card" key={title}>
-            <Icon aria-hidden="true" size={38} />
-            <h3>{title}</h3>
+        {appCards.map((app) => (
+          <article className="app-card" key={app.title}>
+            <img src={app.icon} alt="" aria-hidden="true" />
+            <h3>{app.title}</h3>
           </article>
         ))}
       </div>

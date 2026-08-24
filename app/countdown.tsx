@@ -23,9 +23,13 @@ export function ReleaseCountdown() {
   });
 
   useEffect(() => {
-    setRemaining(getRemaining());
-    const timer = window.setInterval(() => setRemaining(getRemaining()), 1_000);
-    return () => window.clearInterval(timer);
+    const updateRemaining = () => setRemaining(getRemaining());
+    const initial = window.setTimeout(updateRemaining, 0);
+    const timer = window.setInterval(updateRemaining, 1_000);
+    return () => {
+      window.clearTimeout(initial);
+      window.clearInterval(timer);
+    };
   }, []);
 
   return (
