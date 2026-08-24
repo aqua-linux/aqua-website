@@ -176,7 +176,6 @@ export function WaitlistPanel() {
         <Headphones size={42} />
       </div>
       <div className="waitlist-copy">
-        <h2>We are here to help</h2>
         <p>
           Get help, find answers, and connect with the Aqua Linux community.
         </p>
