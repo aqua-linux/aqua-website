@@ -1016,6 +1016,21 @@ input {
   text-align: center;
 }
 
+.download-countdown-screen {
+  display: grid;
+  align-content: start;
+  min-height: calc(100vh - 230px);
+  padding-bottom: 84px;
+}
+
+.download-countdown-screen .subpage-hero {
+  padding-bottom: 30px;
+}
+
+.download-countdown-screen .release-countdown {
+  margin-top: 0;
+}
+
 .subpage-hero h1 {
   max-width: 920px;
   margin: 8px 0 12px;

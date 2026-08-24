@@ -51,6 +51,7 @@ test("defines the Aqua Linux product site content", async () => {
   assert.doesNotMatch(hero, /download-row/);
   assert.match(countdown, /The wave begins in/);
   assert.match(countdown, /2027-09-01/);
+  assert.match(countdown, /targetDate/);
   assert.match(countdown, /seconds/);
   assert.match(countdown, /minutes/);
   assert.doesNotMatch(countdown, /dk|sn/);
@@ -58,7 +59,10 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(desktop, /Aqua Desktop/);
   assert.match(apps, /Aqua Apps/);
   assert.match(community, /Open by default/);
-  assert.match(download, /Preview builds/);
+  assert.match(download, /Aqua Linux is on the way\./);
+  assert.match(download, /2027-08-24/);
+  assert.match(download, /Download opens in/);
+  assert.doesNotMatch(download, /Preview builds/);
   assert.match(css, /\.appbar/);
   assert.match(css, /\.appbar-inner/);
   assert.match(css, /\.subpage-hero/);
