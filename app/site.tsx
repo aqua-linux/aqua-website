@@ -174,21 +174,6 @@ export function WaitlistPanel() {
   );
 }
 
-export function LegacyWhatsNew() {
-  return (
-    <section className="legacy-whats-new">
-      <img className="aqua-orb-img" src="/aqua-mark-glass.png" alt="" />
-      <p className="section-kicker">What Aqua is becoming</p>
-      <h2>A calm desktop that feels clear from the first boot.</h2>
-      <p>
-        Inspired by the approachable structure of desktop Linux sites and the
-        careful spacing of classic product pages, Aqua keeps the message short:
-        fast base, friendly desktop, open development.
-      </p>
-    </section>
-  );
-}
-
 export function FeatureSection() {
   return (
     <section className="feature-section">
@@ -279,19 +264,6 @@ export function Editions() {
             </div>
           </article>
         ))}
-      </div>
-    </section>
-  );
-}
-
-export function DownloadPanel() {
-  return (
-    <section className="final-download">
-      <img className="aqua-orb-img" src="/aqua-mark-glass.png" alt="" />
-      <h2>Download Aqua Linux</h2>
-      <p>Simple page. Clear project. Cool Aqua energy.</p>
-      <div className="download-actions">
-        <a className="download-button" href="/download">Download</a>
       </div>
     </section>
   );

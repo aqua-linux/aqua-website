@@ -12,7 +12,7 @@ export default function CommunityPage() {
       <section className="community-panel">
         <article>
           <h2>Contribute</h2>
-          <p>Help shape the desktop language, test boot images, or improve the Buildroot foundation.</p>
+          <p>Help shape the desktop language, test boot images, or improve the Aqua foundation.</p>
         </article>
         <article>
           <h2>Follow progress</h2>

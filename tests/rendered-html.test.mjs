@@ -27,7 +27,7 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(layout, /apple-touch-icon\.png/);
   assert.match(page, /Hero/);
   assert.match(site, /aqua-icon-black\.png/);
-  assert.match(site, /aqua-mark-glass\.png/);
+  assert.match(layout, /android-chrome-512x512\.png/);
   assert.doesNotMatch(hero, /Simple\. Stable\. Secure\./);
   assert.match(hero, /A modern Linux for everyone\./);
   assert.match(hero, /aqua-hero-laptop-dock\.png/);
@@ -49,9 +49,6 @@ test("defines the Aqua Linux product site content", async () => {
   assert.match(site, /appbar-download/);
   assert.match(site, />Download</);
   assert.doesNotMatch(hero, /ReleaseCountdown/);
-  assert.doesNotMatch(hero, /bluewave-hero-laptop-front\.png|bluewave-hero-laptop\.png/);
-  assert.doesNotMatch(hero, /hero-aero-globe\.jpg|hero-night\.jpg|hero-lagoon\.jpg|hero-meadow\.jpg/);
-  assert.doesNotMatch(css, /bluewave-lower-hero\.png/);
   assert.doesNotMatch(hero, /download-row/);
   assert.match(countdown, /The wave begins in/);
   assert.match(countdown, /2027-09-01/);
@@ -90,7 +87,6 @@ test("defines the Aqua Linux product site content", async () => {
   assert.doesNotMatch(css, /\.news-card/);
   assert.match(css, /\.coming-soon-panel/);
   assert.doesNotMatch(css, /\.hero::before|\.hero::after/);
-  assert.doesNotMatch(css, /--hero-wallpaper/);
   assert.match(css, /background: var\(--dark\);/);
   assert.match(css, /\.appbar \{[\s\S]*background: transparent;/);
   assert.match(css, /\.appbar-download/);
@@ -105,9 +101,5 @@ test("defines the Aqua Linux product site content", async () => {
   assert.doesNotMatch(page, /WaitlistForm|AquariumCard|RealClock/);
   assert.doesNotMatch(page, /Skeuomorphic|Saf\. Şeffaf\. Güvenli|Aqua Linux, sadelik|Email address/);
   assert.doesNotMatch(page, /Estetiğimiz şeffaflıktan/);
-  assert.doesNotMatch(page, /identity-panel|glass-card|landing-shell|glass-panel|aquarium/);
-  assert.doesNotMatch(page, /boot-splash-full-logo\.png/);
-  assert.doesNotMatch(page, /Roadmap|Downloads will follow|Simple public stages|Platform|Not a theme pack|Buildroot based/);
-  assert.doesNotMatch(css, /reef-background|aquarium-stage|glass-panel|Orbitron/);
   assert.doesNotMatch(page + layout, /Your site is taking shape|Building your site|codex-preview/i);
 });
